@@ -8,6 +8,6 @@ order: 2
 
 As part of a partnership between [Dealer.com](http://dealer.com) and [Vermont HITEC](http://www.vthitec.org/index.html), I taught a 12-week class on web development. The educational program was _designed to provide the academic knowledge, technical skills, and [hands-on training](https://www.vpr.org/post/vermont-hitec-training-program-guarantees-jobs#stream/0) needed to succeed in a specific career field_.
 
-The course didn't exist when I was asked to teach it. I'll admit there were many late nights spent writing a curriculum for the next day – everything from the basics of markup, to writing javascript widgets. I had no idea what I was doing. And yes, we taught it in a vacant old cafe. Like _real_ professionals.
+The course didn't exist when I was asked to lead it. There were many late nights spent writing the next day's curriculum and even more mornings questioning what the heck I was doing. We taught the whole thing in a vacant old cafe. Like _real_ professionals.
 
-Well, something must have gone right because every student successfully completed the course and earned their job making the web a better place. It was the most challenging part of my career. It was also the most rewarding.
+Something must have gone right because every student successfully completed the course and earned their job making the web a better place. It was the most challenging part of my career. It was also the most rewarding.
