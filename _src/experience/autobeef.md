@@ -6,10 +6,4 @@ start: 2010
 end: Present
 ---
 
-I was responsible for overseeing Bocoup’s _Inclusive Web Development_ offering, providing dedicated consulting and training on accessibility, performance, and responsive web design “best practices” for client teams, as well as providing guidance, mentoring, and direction for internal teams working on client-facing projects.
-
-Responsibilites included:
-
-* Helping establish workflows for Bocoup’s then-new design offering, including integral process changes to long-standing development team practices
-* Working with Bocoup’s internal data visualization team to ensure that visual representations of complex datasets are accurately and usably presented to users browsing via assistive technologies
-* Leading ongoing efforts to seamlessly integrate newly established “responsive image” patterns into major open-source CMSes
+Responsible for managing the development and content of an entire network of sites. I am charge of analytics and promotion, including managing an email alert system that has 670,000 subscribers.

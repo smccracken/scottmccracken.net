@@ -1,4 +1,3 @@
-/* Unlinked resume page styles, because you never know */
 .resume-header {
 	text-align: center;
 	display: block;
@@ -25,7 +24,7 @@
 }
 
 .amp {
-	font-family: Tiempos, serif;
+	font-family: Oxygen, serif;
 	font-size: .95em;
 	position: relative;
 	bottom: 0;
@@ -67,7 +66,7 @@
 	padding-bottom: .25em;
 }
 .section-hed {
-	font-family: TiemposHed, serif;
+	font-family: Oxygen, serif;
 	font-size: 2.4em;
 	font-weight: 400;
 	margin-bottom: 0;
@@ -141,7 +140,7 @@
 .resume-contact a {
 	padding: 0 1em;
 	text-decoration: none;
-	font-family: Tiempos, serif;
+	font-family: Oxygen, serif;
 	letter-spacing: .025em;
 	font-weight: 100;
 	font-size: .9em;

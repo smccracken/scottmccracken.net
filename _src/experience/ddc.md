@@ -6,10 +6,6 @@ start: 2003
 end: 2010
 ---
 
-I was responsible for overseeing Bocoup’s _Inclusive Web Development_ offering, providing dedicated consulting and training on accessibility, performance, and responsive web design “best practices” for client teams, as well as providing guidance, mentoring, and direction for internal teams working on client-facing projects.
+Part of a team that managed templates used on thousands of websites across the country. The templates had to be responsive, flexible, and able to accept different themes. In partnership with [Vermont HITEC](http://www.vthitec.org/index.html) I helped train a team of web developers who also managed and created new templates,
 
-Responsibilites included:
-
-* Helping establish workflows for Bocoup’s then-new design offering, including integral process changes to long-standing development team practices
-* Working with Bocoup’s internal data visualization team to ensure that visual representations of complex datasets are accurately and usably presented to users browsing via assistive technologies
-* Leading ongoing efforts to seamlessly integrate newly established “responsive image” patterns into major open-source CMSes
+I was also responsible for maintaining the front-end development of the [corporate website](http://www.dealer.com/). I worked with marketing, design, and development teams to create a cohesive look and integrate a video solution used to market products.
