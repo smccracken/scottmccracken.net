@@ -63,6 +63,7 @@
 					{{ layoutContent | safe }}
 				</section>
 
+				{% if class == "home" %}
 				{% set sections = collections.sections | reverse %}
 				{%- for section in sections-%}
 					{% if section.data.pageClass == "contact" %}
@@ -71,6 +72,7 @@
 					{% include "section.njk" %}
 					{% endif %}
 				{%- endfor -%}
+				{% endif %}
 			</div>
 		</main>
 
