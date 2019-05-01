@@ -87,11 +87,13 @@ p {
 
 
 /* Gradient background effect */
-.txt-shaded {
-    background: linear-gradient(-175deg,#004d80 0%,#1d253c 82.5%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: rgba(0,0,0,.15);
+@supports (-webkit-background-clip: text) {
+    .txt-shaded {
+        background: linear-gradient(-175deg,#004d80 0%,#1d253c 82.5%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: rgba(0,0,0,.15);
+        background-clip: text;
+    }
 }
 
 /* Hed/Subhed */
