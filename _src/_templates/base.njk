@@ -51,15 +51,15 @@
 		<link rel="stylesheet" type="text/css" href="/_assets/css/screen.css">
 	</head>
 	<body>
+		<a class="a11y-only" href="#who" title="Skip to main content">Skip to main content</a>
 		<main role="main" id="main"{% if templateClass %} class="{{ templateClass }}"{% endif %}>
-			<a class="a11y-only" href="#what" title="Skip to main content">Skip to main content</a>
 			<div class="body">
 				<header role="banner">
 					<h1 class="hed txt-shaded">{{ subhed | safe }}</h1>
 					<p class="lede">{{ lede | safe }}</p>
 				</header>
 
-				<section class="sub sublede">
+				<section class="sub sublede"{% if class == "home" %} id="who"{% endif %}>
 					{{ layoutContent | safe }}
 				</section>
 
