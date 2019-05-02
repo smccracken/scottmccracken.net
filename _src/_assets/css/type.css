@@ -23,7 +23,8 @@
     font-display: swap;
 }
 
-p.lede {
+header > h2 {
+    display: block;
     font-family: Oxygen, sans-serif;
     font-weight: 300;
     font-size: 5.65vw;
@@ -34,12 +35,12 @@ p.lede {
     color: #10093b;
 }
 @media( min-width: 27em ) {
-    p.lede {
+    header > h2 {
         font-size: 1.515em;
     }
 }
 @media( min-width: 85em ) {
-    p.lede {
+    header > h2 {
         font-size: 1.785vw;
     }
 }
@@ -97,6 +98,10 @@ p {
 }
 
 /* Hed/Subhed */
+h1 + h2 {
+    margin-top: 0;
+}
+
 h1, h2, h3, h4 {
     font-family: OxygenBold, sans-serif;
     margin: 1.25em 0 0 0;
@@ -104,9 +109,6 @@ h1, h2, h3, h4 {
     display: inline-block;
     color: #10093b ;
     font-weight: bold;
-}
-h1+p, h2+p, h3+p, h4+p {
-    margin-top: .5em;
 }
 
 .section-hed {
