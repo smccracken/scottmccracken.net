@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Should have done this years ago",
   "scripts": {
-    "dev": "grunt watch & eleventy --serve"
+    "dev": "grunt watch & ELEVENTY_ENV=dev eleventy --serve"
   },
   "repository": {
     "type": "git",

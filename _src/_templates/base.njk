@@ -72,6 +72,7 @@
 			<p>Built using <a href="https://www.11ty.io/">Eleventy</a>. The source is available on <a href="https://github.com/smccracken/scottmccracken.net">GitHub</a>. Inspired by <a href="https://github.com/Wilto/hire.wil.to">wilto</a></p>
 		</footer>
 
+		{% if eleventy.environment != 'dev' %}
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-12417843-2"></script>
 		<script>
 		  window.dataLayer = window.dataLayer || [];
@@ -79,5 +80,6 @@
 		  gtag('js', new Date());
 		  gtag('config', 'UA-12417843-2');
 		</script>
+		{% endif %}
 	</body>
 </html>
