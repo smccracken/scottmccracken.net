@@ -1,7 +1,44 @@
-module.exports = function(eleventyConfig) {
-	const CleanCSS = require('clean-css');
+const htmlmin = require('html-minifier');
+const pluginRss = require("@11ty/eleventy-plugin-rss");
+const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
+const markdownIt = require('markdown-it');
+const markdownItAnchor = require('markdown-it-anchor');
 
-	// Index page sections
+const filters = require('./_11ty/filters.js');
+const isProduction = process.env.ELEVENTY_ENV === 'production'
+
+module.exports = function(eleventyConfig) {
+  	// Filters
+  	Object.keys(filters).forEach(filterName => {
+    	eleventyConfig.addFilter(filterName, filters[filterName])
+  	});
+
+  	// Plugins
+	eleventyConfig.addPlugin(pluginRss);
+  	eleventyConfig.addPlugin(pluginSyntaxHighlight);
+
+	// Passthroughs
+	eleventyConfig.addPassthroughCopy("_src/_assets");
+
+	// Markdown Processing
+	let markdownIt = require("markdown-it");
+	let markdownItAnchor = require("markdown-it-anchor");
+	let options = {
+    	html: true,
+    	breaks: true,
+    	linkify: true
+  	};
+  	let opts = {
+    	permalink: true,
+    	permalinkClass: 'direct',
+    	permalinkSymbol: ''
+  	};
+
+  	eleventyConfig.setLibrary("md", markdownIt(options)
+    	.use(markdownItAnchor, opts)
+  	);
+
+	// Collection: home page sections
 	eleventyConfig.addCollection("sections", function(collection) {
 		return collection.getAllSorted().filter(function(item) {
 			return item.inputPath.match(/^\.\/_src\/sections\//) !== null;
@@ -10,7 +47,7 @@ module.exports = function(eleventyConfig) {
 		});
 	});
 
-	// Prior work experience
+	// Collection: work experience
 	eleventyConfig.addCollection("experience", function(collection) {
 		return collection.getAllSorted().filter(function(item) {
 			return item.inputPath.match(/^\.\/_src\/experience\//) !== null;
@@ -19,13 +56,19 @@ module.exports = function(eleventyConfig) {
 		});
 	});
 
-	eleventyConfig.addPassthroughCopy("_src/_assets");
+	// Minify HTML Output
+    eleventyConfig.addTransform('htmlmin', function(content, outputPath) {
+        if (outputPath.endsWith('.html') && isProduction) {
+            return htmlmin.minify(content, {
+                useShortDoctype: true,
+                removeComments: true,
+                collapseWhitespace: true
+            })
+        }
+        return content
+    });
 
-	eleventyConfig.addFilter(
-		'cssmin',
-		code => new CleanCSS({}).minify(code).styles
-	);
-
+	// Base config
 	return {
 		templateFormats: [
 			"md",
@@ -33,10 +76,6 @@ module.exports = function(eleventyConfig) {
 			"html"
 		],
 
-		// If your site lives in a different subdirectory, change this.
-		// Leading or trailing slashes are all normalized away, so don’t worry about it.
-		// If you don’t have a subdirectory, use "" or "/" (they do the same thing)
-		// This is only used for URLs (it does not affect your file structure)
 		pathPrefix: "/",
 		markdownTemplateEngine: "njk",
 		htmlTemplateEngine: "njk",

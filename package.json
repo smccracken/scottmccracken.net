@@ -3,7 +3,11 @@
   "version": "0.0.1",
   "description": "Should have done this years ago",
   "scripts": {
-    "dev": "grunt watch & ELEVENTY_ENV=dev eleventy --serve"
+    "start": "npm run dev",
+    "build": "npm run production",
+    "dev": "grunt watch & ELEVENTY_ENV=dev eleventy --serve --watch",
+    "production": "grunt & ELEVENTY_ENV=production eleventy",
+    "debug": "DEBUG=* npx eleventy"
   },
   "repository": {
     "type": "git",
@@ -18,6 +22,8 @@
   "homepage": "http://scottmccracken.net",
   "devDependencies": {
     "@11ty/eleventy": "^0.8.3",
+    "@11ty/eleventy-plugin-rss": "^1.0.2",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^1.0.5",
     "grunt": "^1.0.4",
     "grunt-cli": "^1.3.2",
     "grunt-contrib-clean": "^2.0.0",
@@ -25,6 +31,9 @@
     "grunt-contrib-cssmin": "^3.0.0",
     "grunt-contrib-uglify-es": "^3.3.0",
     "grunt-contrib-watch": "^1.1.0",
-    "grunt-responsive-images": "^1.10.1"
+    "grunt-responsive-images": "^1.10.1",
+    "html-minifier": "^3.5.20",
+    "markdown-it": "^8.4.1",
+    "markdown-it-anchor": "^5.0.2"
   }
 }
