@@ -1,5 +1,5 @@
 ---
-layout: base.njk
+layout: base
 subhed: Contact Me
 lede: There's a good chance I'd like to hear from you
 ---

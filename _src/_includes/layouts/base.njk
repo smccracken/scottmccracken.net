@@ -64,7 +64,7 @@
 			{% if class == "home" %}
 				{% set sections = collections.sections | reverse %}
 				{%- for section in sections-%}
-					{% include "section.njk" %}
+					{% include "layouts/section.njk" %}
 				{%- endfor -%}
 			{% endif %}
 		</main>

@@ -68,6 +68,12 @@ module.exports = function(eleventyConfig) {
         return content
     });
 
+      // Layout Aliases
+  	eleventyConfig.addLayoutAlias('base', 'layouts/base.njk');
+  	eleventyConfig.addLayoutAlias('experience', 'layouts/experience.njk');
+  	eleventyConfig.addLayoutAlias('resume', 'layouts/resume.njk');
+  	eleventyConfig.addLayoutAlias('section', 'layouts/section.njk');
+
 	// Base config
 	return {
 		templateFormats: [
@@ -83,7 +89,7 @@ module.exports = function(eleventyConfig) {
 		passthroughFileCopy: true,
 		dir: {
 			input: "_src",
-			includes: "_templates",
+			includes: "_includes",
 			data: "_data",
 			output: "_site"
 		}
