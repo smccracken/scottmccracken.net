@@ -38,6 +38,9 @@ module.exports = function(eleventyConfig) {
     	.use(markdownItAnchor, opts)
   	);
 
+  	// Collection: Tags
+  	eleventyConfig.addCollection("tags", require("./_11ty/getTagList.js"));
+
 	// Collection: home page sections
 	eleventyConfig.addCollection("sections", function(collection) {
 		return collection.getAllSorted().filter(function(item) {
