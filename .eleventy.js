@@ -41,6 +41,13 @@ module.exports = function(eleventyConfig) {
   	// Collection: Tags
   	eleventyConfig.addCollection("tags", require("./_11ty/getTagList.js"));
 
+  	// Collection: Navigation
+	eleventyConfig.addCollection('nav', function(collection) {
+    	return collection.getFilteredByTag('nav').sort(function(a, b) {
+      		return a.data.navorder - b.data.navorder
+    	})
+	});
+
 	// Collection: home page sections
 	eleventyConfig.addCollection("sections", function(collection) {
 		return collection.getAllSorted().filter(function(item) {
@@ -50,13 +57,11 @@ module.exports = function(eleventyConfig) {
 		});
 	});
 
-	// Collection: work experience
-	eleventyConfig.addCollection("experience", function(collection) {
-		return collection.getAllSorted().filter(function(item) {
-			return item.inputPath.match(/^\.\/_src\/experience\//) !== null;
-		}).sort(function(a, b) {
-			return a.data.start - b.data.start;
-		});
+	// Collection: Work
+	eleventyConfig.addCollection("work", function(collection) {
+		return collection.getFilteredByGlob('**/work/*.md').sort(function(a, b) {
+      		return a.data.order - b.data.order
+    	})
 	});
 
 	// Minify HTML Output
@@ -73,7 +78,6 @@ module.exports = function(eleventyConfig) {
 
       // Layout Aliases
   	eleventyConfig.addLayoutAlias('base', 'layouts/base.njk');
-  	eleventyConfig.addLayoutAlias('experience', 'layouts/experience.njk');
   	eleventyConfig.addLayoutAlias('resume', 'layouts/resume.njk');
   	eleventyConfig.addLayoutAlias('section', 'layouts/section.njk');
 
