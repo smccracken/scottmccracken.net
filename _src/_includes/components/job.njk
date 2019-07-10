@@ -1,0 +1,10 @@
+<section class="sub sub-{{  job.data.pageClass }}" role="region" aria-labelledby="date-{{  job.data.pageClass }}" aria-describedby="place-{{ job.data.pageClass }}">
+	<header>
+		<h1 id="place-{{ job.data.pageClass }}">{{ job.data.title | safe }}</h1>
+		<h2>at {{ job.organization }}</h2>
+		<p class="meta-datespan">{{ job.data.start }}–{{ job.data.end }}</p>
+	</header>
+	<div class="job-desc">
+		{{ job.content | safe }}
+	</div>
+</section>

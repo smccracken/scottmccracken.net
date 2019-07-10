@@ -77,9 +77,9 @@
 				</section>
 
 				<section class="sub sublede">
-				{% set exp = collections.experience | reverse %}
+				{% set exp = collections.work | reverse %}
 				{%- for section in exp -%}
-					{% include "layouts/experience.njk" %}
+					{% include "components/job.njk" %}
 				{%- endfor -%}
 				</section>
 			</div>
