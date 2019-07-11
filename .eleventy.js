@@ -18,7 +18,8 @@ module.exports = function(eleventyConfig) {
   	eleventyConfig.addPlugin(pluginSyntaxHighlight);
 
 	// Passthroughs
-	eleventyConfig.addPassthroughCopy("robots.txt");
+	eleventyConfig.addPassthroughCopy("_src/favicon.ico");
+	eleventyConfig.addPassthroughCopy("_src/robots.txt");
 	eleventyConfig.addPassthroughCopy("_src/_assets");
 
 	// Markdown Processing
