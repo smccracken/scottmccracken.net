@@ -8,4 +8,4 @@ When I took my first post-college job with [Dealer.com](http://www.dealer.com), 
 
 After 7 years I left to work alongside a former colleague on [CarComplaints.com](http://www.carcomplaints.com) – an online resource aimed at helping car owners figure out what's wrong with their vehicle. 
 
-I'm not a car guy, but have somehow spent my [entire career](/resume/ "Scott McCracken's Resume") working on automotive websites. Go figure.
+I'm not a car guy, but have somehow spent my entire career working on automotive websites. Go figure.

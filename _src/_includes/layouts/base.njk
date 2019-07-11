@@ -3,15 +3,14 @@
 	{% include "components/head.njk" %}
 	<body>
 		<a class="a11y-only" href="#main" title="Skip to main content">Skip to main content</a>
-		{% include "components/header.njk" %}
-		<main role="main" id="main"{% if templateClass %} class="{{ templateClass }}"{% endif %}>
+		<header role="banner">
 			{{ content | safe }}
-			{% if class == "home" %}
-				{% set sections = collections.sections | reverse %}
-				{%- for section in sections-%}
-					{% include "layouts/section.njk" %}
-				{%- endfor -%}
-			{% endif %}
+		</header>
+		<main role="main" id="main"{% if templateClass %} class="{{ templateClass }}"{% endif %}>
+			{% set sections = collections.sections | reverse %}
+			{%- for section in sections-%}
+				{% include "layouts/section.njk" %}
+			{%- endfor -%}
 		</main>
 		{% include "components/footer.njk" %}
 	</body>

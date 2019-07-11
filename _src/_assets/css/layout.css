@@ -11,7 +11,7 @@ body {
 header, main, footer {
 	overflow: hidden;
 	max-width: 90em;
-	padding: 5%;
+	padding: 5vh 5vw;
 	margin: 0 auto;
 }
 
@@ -46,7 +46,12 @@ footer[role="contentinfo"] {
 	padding-top: 2vh;
 	padding-bottom: 2vh;
 	border-top: 1px solid rgba(0,0,0,.2);
-	text-align: right;
+	text-align: center;
+}
+
+footer[role="contentinfo"] p {
+	margin-left: auto;
+	margin-right: auto;
 }
 
 
@@ -128,18 +133,6 @@ footer[role="contentinfo"] {
 
 		section .copy {
 			grid-column: 1 / 2;
-		}
-
-		section:nth-of-type(2n+1) .section-head {
-			grid-column: 2 / -1;
-		}
-
-		section:nth-of-type(2n+1) .copy {
-			grid-column: 2 / -1;
-		}
-
-		section:nth-of-type(2n+1) img {
-			grid-column: 1;
 		}
 	}
 }
