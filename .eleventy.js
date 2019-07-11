@@ -21,6 +21,7 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPassthroughCopy("_src/favicon.ico");
 	eleventyConfig.addPassthroughCopy("_src/robots.txt");
 	eleventyConfig.addPassthroughCopy("_src/_assets");
+	eleventyConfig.addPassthroughCopy('_src/_redirects');
 
 	// Markdown Processing
 	let markdownIt = require("markdown-it");
