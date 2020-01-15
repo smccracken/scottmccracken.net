@@ -1,1 +1,3 @@
 /post/:tumblrid/:tumblrslug https://scottmccracken.tumblr.com/post/:tumblrid/:tumblrslug
+/archive/ https://scottmccracken.tumblr.com/archive/
+/archive/:year:/:month https://scottmccracken.tumblr.com/archive/:year:/:month
