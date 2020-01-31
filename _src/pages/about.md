@@ -17,6 +17,7 @@ My focus is building fast, accessible sites that work for everyone.
     ratio: 1/1,
     src: '/assets/img/photo-500.jpg',
     alt: 'Scott holding his daughter on Father\'s Day',
+    caption: 'Family is everything',
     figclass: 'push'
 } %}
 
@@ -33,6 +34,7 @@ As part of a partnership between [Dealer.com](http://dealer.com) and [Vermont HI
     ratio: 10/6,
     src: '/assets/img/teach.gif',
     alt: 'A collage of images from Scott\'s ITAR class on web development',
+    caption: 'Vermont ITAR Course from 2007',
     figclass: 'pull'
 } %}
 
@@ -47,6 +49,7 @@ Something must have gone right because every student successfully completed the 
     ratio: 10/6,
     src: '/assets/img/photos.gif',
     alt: 'A collage of images from Vermont including Moss Glen Falls, Grandview Farm, and a path in peak foliage Groton State Forest',
+    caption: 'An example of images you might find in my Instagram feed',
     figclass: 'push'
 } %}
 
@@ -55,5 +58,3 @@ It's not exactly healthy to spend an entire day behind a computer screen. That's
 Photography is an excellent excuse for getting outside. It's also brought me on a drive or hikes that I might have otherwise skipped.
 
 Over the years I've [taken a lot of pictures](http://www.instagram.com/scottmccracken/). [Some I'm even proud of](http://scottmccracken.tumblr.com).
-
----

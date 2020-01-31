@@ -1,11 +1,11 @@
 <header class="c-header" role="banner">
-  <a class="c-header__branding" href="/">☕️</a>
+  <a class="c-header__branding" href="/" title="Home"><span class="sr-only">Coffee Cup Logo</span>☕️</a>
   {% set navPages = collections.all | eleventyNavigation %}
   <nav class="c-header__nav">
     <ul class="c-header__nav-list">
       {%- for entry in navPages %}
       <li class="c-header__nav-item{% if entry.url == page.url %} c-header__nav-active{% endif %}">
-        <a class="c-header__nav-anchor" href="{{ entry.url | url }}">{{ entry.title }}</a>
+        <a class="c-header__nav-anchor" href="{{ entry.url | url }}" title="{{ entry.title }}">{{ entry.title }}</a>
       </li>
       {%- endfor %}
     </ul>
