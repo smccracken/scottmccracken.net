@@ -1,0 +1,6 @@
+{
+    "layout": "layouts/post",
+    "permalink": "bookmarks/{{ page.date | date_to_permalink }}/{{ page.fileSlug }}/index.html",
+    "type": "bookmark"
+  }
+  

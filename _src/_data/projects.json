@@ -1,0 +1,19 @@
+[{
+    "title": "scottmccracken.net",
+    "url": "https://github.com/smccracken/scottmccracken",
+    "description": "Source files for this website, based off Alex Carpenter's excellent code. Built using Eleventy and hosted with Netlify.",
+    "language": "HTML"
+  },
+  {
+    "title": "chocolatesculptress.com",
+    "url": "https://github.com/smccracken/chocolatesculptress",
+    "description": "Source files for my wife's chocolate sculpture website. Built using Eleventy and hosted on Netlify.",
+    "language": "HTML"
+  },
+  {
+    "title": "penandpaperless.com",
+    "url": "https://github.com/smccracken/penandpaperless.",
+    "description": "A simple site focused on links and tips to living a simpler, more organized life. Built using Eleventy and hosted on Netlify (sensing a theme?).",
+    "language": "JavaScript"
+  }
+]

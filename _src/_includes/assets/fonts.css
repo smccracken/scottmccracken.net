@@ -1,0 +1,25 @@
+/* Noto Serif */
+@font-face {
+    font-family: 'NotoSerif';
+    src: url('/assets/fonts/NotoSerif-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Oxygen */
+@font-face {
+    font-family: 'Oxygen';
+    src: url('/assets/fonts/Oxygen.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'OxygenBold';
+    src: url('/assets/fonts/Oxygen-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+

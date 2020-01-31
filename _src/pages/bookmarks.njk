@@ -1,0 +1,19 @@
+---
+title: Bookmarks
+summary: 'A list of links to articles and ideas that I think are important.'
+pagination:
+  data: collections.bookmarks
+  size: 10
+permalink: /bookmarks/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber }}/{% endif %}index.html
+eleventyNavigation:
+  key: Bookmarks
+  order: 3
+---
+{% extends 'layouts/page.njk' %}
+
+{% block content %}
+  <div class="o-content">
+    {% include "components/listing.njk" %}
+    {% include "components/pagination.njk" %}
+  </div>
+{% endblock %}

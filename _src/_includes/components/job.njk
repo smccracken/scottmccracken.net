@@ -1,8 +1,8 @@
-<section class="sub sub-{{  job.data.pageClass }}" role="region" aria-labelledby="date-{{  job.data.pageClass }}" aria-describedby="place-{{ job.data.pageClass }}">
+<section class="sub sub-{{  job.metadata.pageClass }}" role="region" aria-labelledby="date-{{  job.metadata.pageClass }}" aria-describedby="place-{{ job.metadata.pageClass }}">
 	<header>
-		<h1 id="place-{{ job.data.pageClass }}">{{ job.data.title | safe }}</h1>
+		<h1 id="place-{{ job.metadata.pageClass }}">{{ job.metadata.title | safe }}</h1>
 		<h2>at {{ job.organization }}</h2>
-		<p class="meta-datespan">{{ job.data.start }}–{{ job.data.end }}</p>
+		<p class="meta-datespan">{{ job.metadata.start }}–{{ job.metadata.end }}</p>
 	</header>
 	<div class="job-desc">
 		{{ job.content | safe }}

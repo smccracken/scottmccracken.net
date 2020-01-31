@@ -1,5 +1,13 @@
-<header role="banner">
-	<h1 class="hed txt-shaded">{{ subhed | safe }}</h1>
-	<h2>{{ data.tagline | safe }}</h2>
-	<p><img src="https://secure.gravatar.com/avatar/25517df3b482b419226c9d61d94725da?s=128" alt="Headshot of Scott"> {{ lede | safe }}</p>
+<header class="c-header" role="banner">
+  <a class="c-header__branding" href="/">☕️</a>
+  {% set navPages = collections.all | eleventyNavigation %}
+  <nav class="c-header__nav">
+    <ul class="c-header__nav-list">
+      {%- for entry in navPages %}
+      <li class="c-header__nav-item{% if entry.url == page.url %} c-header__nav-active{% endif %}">
+        <a class="c-header__nav-anchor" href="{{ entry.url | url }}">{{ entry.title }}</a>
+      </li>
+      {%- endfor %}
+    </ul>
+  </nav>
 </header>

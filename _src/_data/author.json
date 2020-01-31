@@ -1,0 +1,19 @@
+{
+    "name": "Scott McCracken",
+    "email": "scottmccracken@gmail.com",
+    "avatar": "/assets/images/profile.gif",
+    "social": {
+        "twitter": {
+            "name": "scottmccracken",
+            "url": "https://twitter.com/scottmccracken"
+        },
+        "github": {
+            "name": "smccracken",
+            "url": "https://github.com/smccracken"
+        },
+        "codepen": {
+            "name": "scottmccracken",
+            "url": "https://codepen.io/scottmccracken/"
+        }
+    }
+}

@@ -1,0 +1,45 @@
+---
+title: "Hi, my name is Scott McCracken."
+subtitle: "There's a good chance I'm drinking coffee."
+permalink: /index.html
+---
+{% extends "layouts/base.njk" %}
+
+{% block content %}
+<header class="u-linear u-margin-bottom-3">
+    <h1 class="u-font-size-xxl u-heading-decorate">{{ title }}</h1>
+    <div class="c-avatar" style="--aspect-ratio: 1/1;">
+      <img src="/assets/img/profile.gif" alt="Photo of Scott McCracken">
+    </div>
+    <p><strong>I've been a front-end web developer for the last 15 years</strong>, most of it with <a href="http://www.dealer.com">Dealer.com</a> and <a href="http://www.carcomplaints.com">CarComplaints.com</a>. I believe that web developers need to focus on semantics and <strong>accessibility</strong> for every user.</p>
+    <p>I live in northern Vermont with my wife, daughter, and two rescue muts. I really love getting outside and <a href="http://www.instagram.com/scottmccracken/">taking pictures</a>.</p>
+</header>
+
+<section class="u-linear">
+  <h2>Recent Bookmarks</h2>
+  <ul class="c-listing">
+    {% for entry in collections.bookmarks | take(4) %}
+    <li class="c-listing__item">
+      <a href="{{ entry.url }}">{{ entry.data.title }}</a>
+      <br>
+      <span class="u-color-gray">{{ entry.data.summary }}</span>
+    </li>
+    {% endfor %}
+  </ul>
+  <div>{% Link '/bookmarks', 'View more <span class="u-hidden-visually">bookmarks</span>' %}</div>
+</section>
+
+<section class="u-linear">
+  <h2>Projects</h2>
+  <ul class="c-listing">
+    {% for project in projects | take(4) %}
+    <li class="c-listing__item">
+      {% Link project.url, project.title, true %}
+      <br>
+      <span class="u-color-gray">{{ project.description }}</span>
+    </li>
+    {% endfor %}
+  </ul>
+  <div>{% Link 'https://github.com/smccracken', 'View more <span class="u-hidden-visually">on Github</span>', true %}</div>
+</section>
+{% endblock %}

@@ -1,12 +1,12 @@
 ---
 slug: ddc
-title: "Senior Web Developer"
 organization: "Dealer.com" 
-start: 2003
-end: 2010
+title: "Senior Web Developer"
+years: "2003-2010"
 order: 2
 ---
 
-Part of a team that managed templates used on thousands of websites across the country. The templates had to be responsive, flexible, and able to accept different themes. 
+Part of a team that managed templates used on thousands of websites across the country. The templates had to be responsive, flexible, and able to accept different themes. Using HTML, CSS, ExpressionEngine, PHP.
 
-I was also responsible for maintaining the front-end development of the [corporate website](http://www.dealer.com/). I worked with marketing, design, and development teams to create a cohesive look and integrate a video solution used to market products.
+* Responsible for maintaining the front-end development of the [corporate website](http://www.dealer.com/). 
+* Worked with markering and development teams to create a cohesive look for integrated videos.

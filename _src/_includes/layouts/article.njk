@@ -1,0 +1,15 @@
+{% extends 'layouts/base.njk' %}
+
+{% block content %}
+<article{% if articleClass %} class="{{ articleClass }}"{% endif %}>
+  <header class="u-linear c-header">
+    <h1 class="u-font-size-xl u-heading-decorate">{{ title }}</h1>
+    {% if summary %}
+      <p class="u-margin-top-05 u-font-size-md">{{ summary | markdownify_inline | safe }}</p>
+    {% elif description %}
+      <p class="u-margin-top-05 u-font-size-md">{{ description | markdownify_inline | safe }}</p>
+    {% endif %}
+  </header>
+  <div class="u-linear">{{ content | safe }}</div>
+</article>
+{% endblock %}
