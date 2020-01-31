@@ -12,6 +12,14 @@ eleventyNavigation:
 
 My focus is building fast, accessible sites that work for everyone.
 
+{% Figure {
+    breakout: false,
+    ratio: 1/1,
+    src: '/assets/img/photo-500.jpg',
+    alt: 'Scott holding his daughter on Father\'s Day',
+    figclass: 'push'
+} %}
+
 When I took my first post-college job with [Dealer.com](http://www.dealer.com), they were a small company providing online solutions for car dealerships. Now they're a huge company providing online solutions for car dealerships. It was fun to be a part of that process. After 7 years I left to work alongside a former colleague on [CarComplaints.com](http://www.carcomplaints.com) – an online resource aimed at helping car owners figure out what's wrong with their vehicle.
 
 I'm not a car guy, but have somehow spent my entire career working on automotive websites.
@@ -24,8 +32,8 @@ As part of a partnership between [Dealer.com](http://dealer.com) and [Vermont HI
     breakout: false,
     ratio: 10/6,
     src: '/assets/img/teach.gif',
-    alt: 'Emily McCracken holding her valentine\'s day chocolate sculpture in front of a pink wall',
-    figclass: 'push'
+    alt: 'A collage of images from Scott\'s ITAR class on web development',
+    figclass: 'pull'
 } %}
 
 The course didn't exist when I was asked to lead it. There were many late nights spent writing the next day's curriculum and even more mornings questioning what the heck I was doing. We taught the whole thing in a vacant old cafe. Like _real_ professionals.
@@ -38,7 +46,7 @@ Something must have gone right because every student successfully completed the 
     breakout: false,
     ratio: 10/6,
     src: '/assets/img/photos.gif',
-    alt: 'Emily McCracken holding her valentine\'s day chocolate sculpture in front of a pink wall',
+    alt: 'A collage of images from Vermont including Moss Glen Falls, Grandview Farm, and a path in peak foliage Groton State Forest',
     figclass: 'push'
 } %}
 
@@ -49,11 +57,3 @@ Photography is an excellent excuse for getting outside. It's also brought me on 
 Over the years I've [taken a lot of pictures](http://www.instagram.com/scottmccracken/). [Some I'm even proud of](http://scottmccracken.tumblr.com).
 
 ---
-
-{% Figure {
-    breakout: false,
-    ratio: 4.8/6,
-    src: '/assets/img/myeverything.jpg',
-    alt: 'Scott holding his daughter on Father\'s Day',
-    lazyload: true
-} %}

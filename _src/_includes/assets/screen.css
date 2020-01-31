@@ -14,8 +14,8 @@
     --color-gray-300: #EFEFEF;
     --color-gray-100: #FAFAFA;
 
-    --font-family-heading: 'OxygenBold', sans-serif;
-    --font-family-system: 'NotoSerif', -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    --font-family-heading: 'Bitter', sans-serif;
+    --font-family-system: -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
     --font-family-code: Menlo, Monaco, monospace;
    
     --color-primary: var(--color-blue);
@@ -83,6 +83,11 @@
     font-family: var(--font-family-heading);
   }
   
+  h1 span {
+    display: block;
+    font-weight: normal;
+  }
+
   img,
   svg {
     max-width: 100%;
@@ -914,7 +919,7 @@
    */
   
   .u-font-size-xxl {
-    font-size: 3rem;
+    font-size: 2.75rem;
     line-height: var(--line-height-strict);
   }
   
