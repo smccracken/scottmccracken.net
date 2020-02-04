@@ -5,29 +5,29 @@ permalink: /bookmarks/feed.xml
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Posts - {{ site.title }}</title>
   <subtitle>{{ site.description }}</subtitle>
-  <link href="https://scottmccracken.net/bookmarks/feed" rel="self"/>
+  <link href="https://scottmccracken.net/bookmarks/feed.xml" rel="self"/>
   <link href="https://scottmccracken.net"/>
   <updated>{{ collections.bookmarks | rssLastUpdatedDate }}</updated>
   <id>https://scottmccracken.net</id>
   <author>
-    <name>Emily McCracken</name>
-    <email>emilywjones@gmail.com</email>
+    <name>Scott McCracken</name>
+    <email>scottmccracken@gmail.com</email>
   </author>
-  {%- for post in collections.posts %}
-  {% set idUrl %}{{ post.url | url | absoluteUrl('https://scottmccracken.net') }}{% endset %}
-  {% set absolutePostUrl %}{{ post.url | url | absoluteUrl('https://scottmccracken.net') }}{% endset %}
+  {%- for bookmark in collections.bookmarks %}
+  {% set idUrl %}{{ bookmark.url | url | absoluteUrl('https://scottmccracken.net') }}{% endset %}
+  {% set absolutePostUrl %}{{ bookmark.url | url | absoluteUrl('https://scottmccracken.net') }}{% endset %}
   <entry>
-    <title>{{ post.data.title }}</title>
-    {% if post.data.link %}
-    <link href="{{ post.data.link }}" rel="alternate" type="text/html"/>
+    <title>{{ bookmark.data.title }}</title>
+    {% if bookmark.data.link %}
+    <link href="{{ bookmark.data.link }}" rel="alternate" type="text/html"/>
     <link href="{{ absolutePostUrl }}" rel="related" type="text/html"/>
     {% else %}
     <link href="{{ absolutePostUrl }}" rel="alternate" type="text/html"/>
     {% endif %}
-    <updated>{{ post.date | rssDate }}</updated>
+    <updated>{{ bookmark.date | rssDate }}</updated>
     <id>{{ idUrl }}</id>
     <content type="html">
-      {{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}
+      {{ bookmark.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}
     </content>
   </entry>
   {%- endfor %}
