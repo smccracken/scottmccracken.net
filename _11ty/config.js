@@ -24,6 +24,24 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addCollection('bookmarks', collection => {
     	return collection.getFilteredByGlob('**/bookmarks/*.md').reverse()
 	  });
+	
+	  eleventyConfig.addCollection("taggedBookmarks", function(collection) {
+		let resultArrays = {};
+		collection
+		  .getFilteredByGlob('**/bookmarks/*.md')
+		  .reverse()
+		  .forEach(function(item) {
+			if(Array.isArray(item.data["tags"])) {
+			  for(let topicTag of item.data["tags"]) {
+				if( !resultArrays[topicTag] ) {
+				  resultArrays[topicTag] = [];
+				}
+				resultArrays[topicTag].push(item);
+			  }
+			}
+		});
+		return resultArrays;
+	  });
 	  
 	eleventyConfig.addCollection('posts', collection => {
     	return collection.getFilteredByGlob('**/posts/*.md').reverse()

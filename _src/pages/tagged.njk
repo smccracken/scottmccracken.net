@@ -1,0 +1,27 @@
+---
+pagination:
+  data: collections
+  size: 1
+  alias: tag
+permalink: /tagged/{{ tag }}/index.html
+---
+{% set layoutStyles = [
+  '/components/card.css',
+  '/components/entry.css',
+  '/components/listing.css',
+  '/components/pagination.css',
+  '/utilities/eyebrow.css'
+]%}
+{% extends "layouts/base.njk" %}
+
+{% block content %}
+<header class="u-linear c-header">
+    <h1 class="u-font-size-xl u-heading-decorate">Bookmarks Tagged “{{ tag }}”</h1>
+</header>
+{% set items = collections.taggedBookmarks[tag] %}
+<section class="o-content u-margin-bottom-3 u-flow">
+    <div class="o-content">
+    {% include "components/listing.njk" %}
+  </div>
+</section>
+{% endblock %}

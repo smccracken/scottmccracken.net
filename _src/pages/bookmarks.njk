@@ -13,6 +13,7 @@ eleventyNavigation:
 
 {% block content %}
   <div class="o-content">
+    {% set items = pagination.items %}
     {% include "components/listing.njk" %}
     {% include "components/pagination.njk" %}
   </div>
