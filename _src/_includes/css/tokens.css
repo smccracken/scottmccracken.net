@@ -46,12 +46,22 @@
     margin-left: auto;
     margin-right: auto;
 }
+
+.text-size-inherit {
+    font-size: inherit;
+}
 .text-center {
     text-align: center;
 }
 
 .flow-max {
     --flow-space: 3rem;
+}
+.flow-min {
+    --flow-space: 1rem;
+}
+.flow-reset {
+    --flow-space: 1.5rem;
 }
 
 .gap-bottom-800 {
