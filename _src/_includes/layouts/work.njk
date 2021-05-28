@@ -1,6 +1,38 @@
----
-layout: layouts/base.njk
-templateClass: tmpl-model
----
+{% extends 'layouts/base.njk' %}
 
-Work intro
+{% block content %}
+<div class="wrapper grid-narrow pad-top-800">
+    <article class="work flow">
+        <header class="gap-bottom-800">
+            <h1>{{ title }}</h1>
+            {{ content | safe }}
+        </header>
+
+        <hr>
+        <section class="work__history">
+            <h2>Employment History</h2>
+            <ol role="list" class="work__list flow flow-max">
+            {% for job in jobs %}
+                <li>
+                    <h3>{{ job.title }}, {{ job.company }}</h3>
+                    <time>{{ job.start }}&#8212;{{ job.end }}</time>
+                    <p class="gap-top-400">{{ job.summary | safe }}</p>
+                </li>
+            {% endfor %}
+            </ol>
+        </section>
+
+        <hr>
+        <section class="work__education">
+            <h2>Education</h2>
+            <p>Bachelor's Degree in Computer Science, University of Vermont 2003.</p>
+        </section>
+
+        <hr>
+        <section class="work__skills">
+            <h2>Skills</h2>
+            <p>HTML, CSS, Vanilla Javascript, PHP, Perl, MySQL, Eleventy, Jekyll, Expression Engine, Nunjucks, Gulp, SASS, Git, NPM, Yarn, Photoshop.</p>
+        </section>
+    </article>
+</div>
+{% endblock %}

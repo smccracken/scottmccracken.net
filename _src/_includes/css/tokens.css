@@ -1,0 +1,75 @@
+@font-face {
+    font-family: "iA Quattro";
+    font-stretch: 25% 150%;
+    font-weight: 100 1000;
+    src: url("/assets/fonts/iAWriterQuattroV.ttf") format("truetype-variations");
+}
+
+:root {
+    --color-mode: "dark";
+    --color-dark: #171717;
+    --color-default: #333;
+    --color-light: #fefefe;
+    --text-color: #333;
+    --toggle-bg-position: 0 0;
+    --toggle-dark-position: -20px 0;
+    --github-icon-position: -100px;
+    --hover-shadow: #ddd;
+    --color-primary: rgb(245, 158, 11);
+
+    --font-serif: "iA Quattro", Georgia, -apple-system, serif;
+
+    --size-100: 0.25rem;
+    --size-200: 0.7rem;
+    --size-300: 0.9rem;
+    --size-400: 1rem;
+    --size-500: 1.25rem;
+    --size-600: 1.8rem;
+    --size-700: 2.4rem;
+    --size-800: 3.2rem;
+    --size-900: 4.2rem;
+    --flow-space: 1.5rem;
+
+    --color-background: var(--color-light);
+    --color-text: var(--color-dark);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-mode: "dark";
+        --color-background: var(--color-dark);
+        --color-text: #fcf7f5;
+    }
+}
+
+.centered {
+    margin-left: auto;
+    margin-right: auto;
+}
+.text-center {
+    text-align: center;
+}
+
+.flow-max {
+    --flow-space: 3rem;
+}
+
+.gap-bottom-800 {
+    margin-bottom: var(--size-800);
+}
+.gap-top-400 {
+    margin-top: var(--size-400);
+}
+.gap-top-800 {
+    margin-top: var(--size-800);
+}
+
+.pad-bottom-400 {
+    padding-bottom: var(--size-400);
+}
+.pad-top-400 {
+    padding-top: var(--size-400);
+}
+.pad-top-800 {
+    padding-top: var(--size-800);
+}

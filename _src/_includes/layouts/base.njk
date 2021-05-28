@@ -1,41 +1,33 @@
-<!DOCTYPE html>
+{% set coreStyles = [
+	'tokens.css',
+	'reset.css',
+	'base.css',
+    'utilities/flow.css',
+    'utilities/grid.css',
+    'utilities/visually-hidden.css',
+    'utilities/wrapper.css',
+    'blocks/site-header.css'
+]%}
+<!doctype html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#d34e23" />
-  <meta name="robots" content="index,follow" />
-  <title>{% if title and page.url != '/' %}{{ title }}{% else %}Front-End Web Developer{% endif %} - {{ site.title }}</title>
-  <meta name="description" content="{% if description %}{{ description | markdownify_inline | strip_html }}{% else %}{{ site.description }}{% endif %}" />
-  <meta property="og:title" content="{% if title and page.url != '/' %}{{ title }}{% else %}Web Developer in Vermont{% endif %} - {{ site.title }}">
-  <meta property="og:description" content="{% if description %}{{ description | markdownify_inline | strip_html }}{% else %}{{ site.description }}{% endif %}">
-  <meta property="og:url" content="{{ site.url }}{{ page.url | permalink }}">
-  <meta property="og:image" content="{{ site.url }}{%if thumbnail %}{{ thumbnail }}{% else %}/assets/images/og-image.png{% endif %}">
-  <meta name="twitter:card" content="summary">
-  <link rel="icon apple-touch-icon" href="/assets/images/apple-touch-icon.png" sizes="180x180" type="image/png" />
-  <link rel="icon" href="/assets/images/favicon-96x96.png" sizes="96x96" type="image/png" />
-  <link rel="icon" href="/assets/images/favicon-32x32.png" sizes="32x32" type="image/png" />
-  <link rel="icon" href="/assets/images/favicon-16x16.png" sizes="16x16" type="image/png" />
-  <link rel="manifest" href="/manifest.json" />
-  <link rel="alternate" type="application/rss+xml" title="Feed for bookmarks" href="/bookmarks/feed.xml" />
-  <link href="https://fonts.googleapis.com/css?family=Bitter:400,700&amp;display=swap" rel="stylesheet">
-  {% set css %}
-    {% include "assets/screen.css" %}
-    {% if primaryColor %}
-      :root { --color-primary: {{ primaryColor }}; }
-    {% endif %}
-  {% endset %}
-  <style>{{ css | cssmin | safe }}</style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="robots" content="index,follow" />
+    {% include "blocks/meta.njk" %}
+    <style>{{ helpers.getCSS(coreStyles, layoutStyles) | safe }}</style>
+
+    {% block head %}{% endblock %}
 </head>
 <body>
-  <a href="#main-content" class="c-skip">Skip to main content</a>
-  <div class="o-container">
-    {% include "components/header.njk" %}
-    <main id="main-content">
-      {% block header %}{% endblock %}
-      {% block content %}{% endblock %}
+    <a class="skip-link" href="#content">Skip to main content</a>
+    {% include "blocks/site-header.njk" %}
+    <main id="content" class="grid" tabindex="-1">
+    {% block content %}{% endblock %}
     </main>
-  </div>
-  {% include "components/footer.njk" %}
+    {% block foot %}{% endblock %}
+    {% include "blocks/site-footer.njk" %}
 </body>
 </html>

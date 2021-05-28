@@ -1,16 +1,21 @@
 {% extends 'layouts/base.njk' %}
 
-{% block header %}
-  <header class="u-linear c-header">
-    <h1 class="u-font-size-xl u-heading-decorate">{{ title }}</h1>
-    {% if summary %}
-      <p class="u-margin-top-05 u-font-size-md">{{ summary | markdownify_inline | safe }}</p>
-    {% elif description %}
-      <p class="u-margin-top-05 u-font-size-md">{{ description | markdownify_inline | safe }}</p>
-    {% endif %}
-  </header>
-{% endblock %}
-
 {% block content %}
-<div class="u-linear">{{ content | safe }}</div>
+{{ data }}
+{% if image %}
+<picture class="{{ image.class }} pad-top-800">
+    <img src="{{ image.src }}" alt="{{ image.alt }}" class="centered" />
+</picture>
+{% endif %}
+
+<div class="wrapper grid-narrow {% if image %}pad-top-200{% else %}pad-top-800{% endif %}">
+    <article class="post flow">
+        <header class="gap-bottom-800">
+            <h1>{{ title }}</h1>
+            {{ summary | safe }}
+        </header>
+    
+        {{ content | safe }}
+    </article>
+</div>
 {% endblock %}

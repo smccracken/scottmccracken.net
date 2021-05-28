@@ -1,0 +1,38 @@
+---
+title: Bookmarks
+summary: 'Casting a wide net and collecting links that made me think, are worth sharing, or provide a good reference point on future projects.'
+pagination:
+  data: collections.bookmarks
+  size: 10
+permalink: /bookmarks/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber }}/{% endif %}index.html
+eleventyNavigation:
+  key: Bookmarks
+  order: 3
+---
+{% extends 'layouts/page.njk' %}
+
+{% block content %}
+<div class="wrapper grid-narrow pad-top-800">
+    <article class="bookmarks">
+      <header class="gap-bottom-800">
+        <h1>{{ title }}</h1>
+        {{ summary | safe }}
+      </header>
+      <div class="bookmarks__content">
+        {% set items = pagination.items %}
+        <ol role="list" class="bookmark__list flow flow-max">
+          {% for entry in items %}
+          <li class="bookmark__list-item">
+            <article>
+              <time>{{ entry.date | date_formatted }}</time>
+              <h2 class="gap-bottom-200"><a href="{{ entry.url }}">{{ entry.data.title }}</a></h2>
+              {{ entry.templateContent | safe }}  
+            </article>
+          </li>
+          {% endfor %}
+        </ol>
+      </div>
+    </article>
+    {% include "blocks/pagination.njk" %}
+</div>
+{% endblock %}

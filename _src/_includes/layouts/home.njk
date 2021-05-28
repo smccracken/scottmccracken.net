@@ -1,0 +1,53 @@
+{% extends 'layouts/base.njk' %}
+
+{% block content %}
+{{ data }}
+{% if image %}
+<picture class="{{ image.class }} pad-top-800">
+    <img src="{{ image.src }}" alt="{{ image.alt }}" class="centered" />
+</picture>
+{% endif %}
+
+<div class="wrapper grid-narrow {% if image %}pad-top-200{% else %}pad-top-800{% endif %}">
+    <article class="post flow">
+        <header class="gap-bottom-400">
+            <h1>{{ title }}</h1>
+            {{ summary | safe }}
+        </header>
+        {{ content | safe }}
+    </article>
+
+    <hr class="gap-top-800"">
+    <h2>Latest Bookmarks</h2>
+    {% set items = collections.bookmarks |  take(3) %}
+    <div class="bookmarks flow gap-top-400">
+        <ol role="list" class="bookmark__list flow flow-max gap-top-800">
+            {% for entry in items %}
+            <li class="bookmark__list-item">
+            <article>
+                <time>{{ entry.date | date_formatted }}</time>
+                <h3 class="gap-bottom-200"><a href="{{ entry.url }}">{{ entry.data.title }}</a></h3>
+                {{ entry.templateContent | safe }}  
+            </article>
+            </li>
+            {% endfor %}
+        </ol>
+        <p><a href="/bookmarks/">See all bookmarks &rarr;</a></p>
+    </div>
+
+    <hr class="gap-top-800"">
+    <h2>Featured Projects</h2>
+    <div class="projects flow gap-top-400">
+        <ul role="list" class="project__list flow flow-max">
+            <li>
+                <h3><a href="https://chocolatesculptress.com">Chocolate Sculptress</a></h3>
+                <p>Website for chocolate artist (and my wonderful wife) <a href="https://chocolatesculptress.com" title="Emily McCracken is a Chocolate Artist">Emily McCracken</a>. Built with 11ty. <a href="https://github.com/smccracken/chocolatesculptress.com">Chocolate Sculptress on GitHub</a></p>
+            </li>
+            <li>
+                <h3><a href="https://scottmccracken.tumblr.com/">Tumblr Photography</a></h3>
+                <p>A <a href="https://scottmccracken.tumblr.com/">collection of some of my favorite photos</a>.</p>
+            </li>
+        </ul>
+        <p><a href="/projects/">See all projects &rarr;</a></p>
+    </div>
+{% endblock %}

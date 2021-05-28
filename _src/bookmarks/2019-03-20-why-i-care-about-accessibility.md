@@ -6,4 +6,3 @@ tags: [accessibility]
 ---
 
 "You don’t need to have a personal connection to accessibility to care about it as deeply, of course. You just need to be open to the world around you."
-
