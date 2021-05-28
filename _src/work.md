@@ -16,7 +16,7 @@ jobs:
     title: Vermont HITEC Instructor
     start: February 2007
     end: May 2007
-    summary: "In collaboration with the state of Vermont, I created an in-person web development course for individuals with no prior web experience. We went over everything from basic HTML to Git best practices. All individuals that completed the course received full-time job offers and became valuable members of the Dealer.com site development team."
+    summary: "Created an in-person web development course for individuals with no prior web experience. The educational program was a partnership between Vermont HITEC and Dealer.com to provide technical skills and hands-on knowledge to individuals looking for a career change. We went over everything from basic HTML to Git best practices. All participants graduated and were offered full-time gigs."
   - company: Dealer.com
     title: Senior Web Developer
     start: September 2003
@@ -30,11 +30,11 @@ jobs:
     summary: "After graduating from UVM I landed an internship with their web development team, where I spent time debugging template layout issues and processing images. It was a great first experience at how large-scale websites operate."
 ---
 
-I’m a front-end web developer that believes semantic HTML is the key to creating inclusive and successful web user interfaces. Every site
+I believe in the core foundations of the web. That means writing complaint HTML, progressively enhanced CSS, and presentational JavaScript to build accessible web user interfaces. 
 
-+ **Optimize them for mobile devices** first.
-+ **Make them fully responsive** to adapt to the ever-growing list of devices
-+ **Use progressive enhancement** to take advantage of modern CSS, while providing appropriate&#8212;but not pixel perfect&#8212;fallbacks for older browsers.
-+ **Ensure they are accessible to everyone** by stress-testing the design and browsing the site with a screen-reader.
-+ **Enhance the experience with Vanilla Javascript** but try to never make it a requirement for a functional site.
-+ **Eliminate as much cruft as possible** to make sure the site's load on any connection.
+My goal with any new site I build is meet the following criteria:
+
++ **Accessible by default** with semantic markup that can be logically followed by keyboard users and read by screen readers.
++ **Optimized for mobile devices** first, but responsive enough to work on almost any other screen.
++ **Progressively enhanced** with modern CSS built-upon appropriate&#8212;but not pixel perfect&#8212;fallbacks for older browsers. Additionally Javascript can be used to add interactivity, but I'll make every effort to make sure it's not _required_ for a functional site. 
++ **Eliminate as much cruft as possible** to make sure the site loads on any connection.

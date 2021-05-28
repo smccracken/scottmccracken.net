@@ -1,7 +1,7 @@
 ---
 layout: layouts/home.njk
 permalink: /
-title: Hi, I'm Scott. A front-end web developer from Vermont.
+title: Hi, I'm Scott. A front-end web developer and accessibility advocate from Vermont
 eleventyNavigation:
   key: Scott McCracken
   order: 1
