@@ -1,7 +1,12 @@
-html {
+:root {
+    --flow-space: var(--flow-space);
+}
+
+body {
     background-color: var(--color-background);
     color: var(--color-text);
     font-family: var(--font-serif);
+    line-height: 1.5;
 }
 
 a:not([class]) {
@@ -22,4 +27,10 @@ body > header,
 body > footer {
     width: 95vw;
     margin: 0 auto;
+}
+
+h1,
+h2,
+h3 {
+    line-height: 1.3;
 }
