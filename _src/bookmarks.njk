@@ -20,17 +20,17 @@ eleventyNavigation:
       </header>
       <div class="bookmarks__content">
         {% set items = pagination.items %}
-        <ol role="list" class="bookmark__list flow flow-max">
-          {% for entry in items %}
-          <li class="bookmark__list-item">
-            <article>
-              <time>{{ entry.date | date_formatted }}</time>
-              <h2 class="gap-bottom-200"><a href="{{ entry.link }}">{{ entry.data.title }}</a></h2>
-              {{ entry.templateContent | safe }}  
-            </article>
-          </li>
-          {% endfor %}
-        </ol>
+        <ol role="list" class="bookmark__list flow flow">
+            {% for entry in items %}
+            <li class="bookmark__list-item">
+                <h2 class="text-size-inherit"><a href="{{ entry.link }}">{{ entry.data.title }}</a></h2>
+                <div class="flow flow-reset">
+                    {{ entry.templateContent | safe }}
+                    <p><time>{{ entry.date | date_formatted }}</time></p>
+                </div>
+            </li>
+            {% endfor %}
+          </ol>
       </div>
     </article>
     {% include "blocks/pagination.njk" %}
