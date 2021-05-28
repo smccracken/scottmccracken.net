@@ -25,7 +25,7 @@ eleventyNavigation:
           <li class="bookmark__list-item">
             <article>
               <time>{{ entry.date | date_formatted }}</time>
-              <h2 class="gap-bottom-200"><a href="{{ entry.url }}">{{ entry.data.title }}</a></h2>
+              <h2 class="gap-bottom-200"><a href="{{ entry.link }}">{{ entry.data.title }}</a></h2>
               {{ entry.templateContent | safe }}  
             </article>
           </li>

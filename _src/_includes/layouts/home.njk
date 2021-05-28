@@ -26,7 +26,7 @@
             <li class="bookmark__list-item">
             <article>
                 <time>{{ entry.date | date_formatted }}</time>
-                <h3 class="gap-bottom-200"><a href="{{ entry.url }}">{{ entry.data.title }}</a></h3>
+                <h3 class="gap-bottom-200"><a href="{{ entry.data.link }}">{{ entry.data.title }} <span class="sr-only">by {{ entry.data.author }}</span></a></h3>
                 {{ entry.templateContent | safe }}  
             </article>
             </li>
