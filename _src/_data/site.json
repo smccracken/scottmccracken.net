@@ -1,14 +1,14 @@
 {
-  "url": "https://scottmccracken.net",
-  "title": "Scott McCracken",
-  "tagline": "A front-end web developer and photographer from Vermont.",
-  "description": "Front-end web developer and photographer from Vermont. Most likely drinking coffee.",
-  "social": {
-    "twitter": "https://twitter.com/scottmccracken",
-    "instagram": "https://instagram.com/scottmccracken",
-    "github": "https://github.com/smccracken",
-    "codepen": "https://codepen.io/scottmccracken",
-    "dribbble": "https://dribbble.com/scottmccracken",
-    "linkedin": "https://www.linkedin.com/in/scottmccracken"
-  }
+    "url": "https://scottmccracken.net",
+    "name": "Scott McCracken, Front-End Web Developer",
+    "tagline": "A front-end web developer and photographer from Vermont.",
+    "description": "Front-end web developer and photographer from Vermont. Most likely drinking coffee.",
+    "social": {
+        "twitter": "https://twitter.com/scottmccracken",
+        "instagram": "https://instagram.com/scottmccracken",
+        "github": "https://github.com/smccracken",
+        "codepen": "https://codepen.io/scottmccracken",
+        "dribbble": "https://dribbble.com/scottmccracken",
+        "linkedin": "https://www.linkedin.com/in/scottmccracken"
+    }
 }

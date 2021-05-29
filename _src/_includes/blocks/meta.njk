@@ -1,8 +1,8 @@
 {% set pageTitle = title + ' - ' + site.name %}
 
-{# We don't want any duplication. This is likely for the homepage #}
-{% if site.name === title %} 
-  {% set pageTitle = title %}
+{# For the homepage just use the site name as the title #}
+{% if templateClass === "home" %} 
+  {% set pageTitle = site.name %}
 {% endif %}
 
 {% set siteTitle = site.name %}
@@ -17,7 +17,6 @@
 {% if not metaDesc %}
   {% set metaDesc = summary %}
 {% endif %}
-
 
 <title>{{ pageTitle }}</title>
 <link rel="canonical" href="{{ currentUrl }}" />
