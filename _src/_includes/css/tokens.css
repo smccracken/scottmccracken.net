@@ -10,12 +10,13 @@
     --color-dark: #171717;
     --color-default: #333;
     --color-light: #fefefe;
+    --color-primary: hsl(22, 75.6%, 41.8%);
+    --color-accent: hsl(200, 75%, 64%);
     --text-color: #333;
     --toggle-bg-position: 0 0;
     --toggle-dark-position: -20px 0;
     --github-icon-position: -100px;
     --hover-shadow: #ddd;
-    --color-primary: rgb(245, 158, 11);
 
     --font-serif: "iA Quattro", Georgia, -apple-system, serif;
 
@@ -32,6 +33,7 @@
 
     --color-background: var(--color-light);
     --color-text: var(--color-dark);
+    --color-links: var(--color-primary);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -39,6 +41,7 @@
         --color-mode: "dark";
         --color-background: var(--color-dark);
         --color-text: #fcf7f5;
+        --color-links: var(--color-accent);
     }
 }
 

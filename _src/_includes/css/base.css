@@ -9,12 +9,14 @@ body {
     line-height: 1.5;
 }
 
-a:not([class]) {
-    color: currentColor;
+a {
+    color: var(--color-links);
+    text-decoration: underline;
+    transition: color 0.15s linear, outline 0.1s linear;
 }
 
 :focus {
-    outline: 2px dashed var(--color-primary);
+    outline: 2px dashed var(--color-links);
     outline-offset: 0.25rem;
 }
 
