@@ -30,7 +30,7 @@ jobs:
     summary: "After graduating from UVM I landed an internship with their web development team, where I spent time debugging template layout issues and processing images. It was a great first experience at how large-scale websites operate."
 ---
 
-I believe in the core foundations of the web. That means writing complaint HTML, progressively enhanced CSS, and presentational JavaScript to build accessible web user interfaces. 
+I believe in the core foundations of the web. That means writing semantic HTML, progressively enhanced CSS, and presentational JavaScript to build accessible web user interfaces. 
 
 My goal with any new site I build is meet the following criteria:
 

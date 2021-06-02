@@ -7,7 +7,7 @@ eleventyNavigation:
   order: 1
 ---
 
-I've been building websites for 18 years, with a strong focus on creating responsive and fast-loading sites that are accessible to everyone.
+I've been building websites for 18 years, focusing on creating responsive and fast-loading sites that are accessible to everyone.
 
 I live in northern Vermont with [my wife](https://chocolatesculptress.com), daughter, and our two rescue terrier muts. When given the chance I really love getting outside and [taking pictures](http://www.instagram.com/scottmccracken/).
 
