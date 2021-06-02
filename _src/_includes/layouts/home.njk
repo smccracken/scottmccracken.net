@@ -19,25 +19,27 @@
     </article>
 
     <hr>
-    <h2>Latest Bookmarks</h2>
-    {% set items = collections.bookmarks |  take(3) %}
-    <div class="bookmarks flow gap-top-400">
-        <ol role="list" class="bookmark__list flow flow gap-top-800">
-            {% for entry in items %}
-            <li class="bookmark__list-item">
-                <h3 class="text-size-inherit"><a href="{{ entry.link }}">{{ entry.data.title }}</a></h3>
-                <div class="flow flow-reset">
-                    {{ entry.templateContent | safe }}
-                    <p><time>{{ entry.date | date_formatted }}</time></p>
-                </div>
-            </li>
-            {% endfor %}
-        </ol>
-        <p><a href="/bookmarks/">See all bookmarks &rarr;</a></p>
-    </div>
+    <section class="flow">
+        <h2 id="heading-bookmarks">Latest Bookmarks</h2>
+        {% set items = collections.bookmarks |  take(3) %}
+        <div class="bookmarks flow gap-top-400">
+            <ol role="list" class="bookmark__list flow flow gap-top-800">
+                {% for entry in items %}
+                <li class="bookmark__list-item">
+                    <h3 class="text-size-inherit"><a href="{{ entry.link }}">{{ entry.data.title }}</a></h3>
+                    <div class="flow flow-reset">
+                        {{ entry.templateContent | safe }}
+                        <p><time>{{ entry.date | date_formatted }}</time></p>
+                    </div>
+                </li>
+                {% endfor %}
+            </ol>
+            <p><a href="/bookmarks/">See all bookmarks &rarr;</a></p>
+        </div>
+    </section>
 
     <hr>
-    <section class="flow" aria-labeledby="heading-featured">
+    <section class="flow">
         <h2 id="heading-featured">Featured Projects</h2>
         <div class="projects flow">
             <ul role="list" class="project__list flow flow-max">
