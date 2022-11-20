@@ -42,6 +42,10 @@ h2 {
     font-family: var(--font-serif);
 }
 
+p {
+    max-width: 72ch;
+}
+
 hr {
     width: 75%;
     height: 1px;

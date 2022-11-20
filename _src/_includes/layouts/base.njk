@@ -25,7 +25,7 @@
 <body{% if templateClass %} class="{{ templateClass }}"{% endif %}>
     <a class="skip-link" href="#content">Skip to main content</a>
     {% include "blocks/site-header.njk" %}
-    <main id="content" class="grid" tabindex="-1">
+    <main id="content" tabindex="-1">
     {% block content %}{% endblock %}
     </main>
     {% block foot %}{% endblock %}
