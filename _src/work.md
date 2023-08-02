@@ -6,11 +6,17 @@ eleventyNavigation:
   key: Work
   order: 3
 jobs:
+  - company: Accessible Web
+    title: Software Engineer
+    start: July 2021
+    end: Present
+    summary: "Developing tools and services for an accessibility focused SASS company."
+    skills: [Django, Python, React, Javascript, HTML, Wordpress, PHP, UX]
   - company: Autobeef, LLC
     title: Director of Web Development
     start: May 2010
-    end: Present
-    summary: "I manage a network of websites for car owners and buyers. I’m focused on growing the network’s reach through content, advertising, and SEO strategies while managing the site’s email alert system with hundreds of thousands of subscribers."
+    end: June 2021
+    summary: "Managed a network of websites for car owners and buyers. Focused on growing the network’s reach through content, advertising, and SEO strategies while managing the site’s email alert system with hundreds of thousands of subscribers."
     skills: [HTML, CSS, SASS, Vanilla Javascript, jQuery, Gulp, Eleventy, Perl, MySQL]
   - company: Dealer.com
     title: Vermont HITEC Instructor
