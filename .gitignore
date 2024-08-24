@@ -1,6 +1,10 @@
-archive
-node_modules
-dist
 .editorconfig
+.DS_Store
 .vscode
+
 package-lock.json
+
+_design
+archive
+dist
+node_modules
