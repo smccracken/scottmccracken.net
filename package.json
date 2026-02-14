@@ -1,36 +1,14 @@
 {
-    "name": "scottmccracken.net",
-    "version": "1.0.0",
-    "description": "Most likely drinking coffee",
-    "scripts": {
-        "build": "npx eleventy",
-        "start": "npx eleventy --serve --watch"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git@github.com:smccracken/scottmccracken"
-    },
-    "author": {
-        "name": "Scott McCracken",
-        "email": "scottmccracken@gmail.com",
-        "url": "https://scottmccracken.net"
-    },
-    "license": "MIT",
-    "homepage": "https://scottmccracken.net",
-    "devDependencies": {
-        "@11ty/eleventy": "^0.12.1",
-        "@11ty/eleventy-navigation": "^0.2.0",
-        "@11ty/eleventy-plugin-rss": "^1.1.1",
-        "@11ty/eleventy-plugin-syntaxhighlight": "^1.0.5",
-        "clean-css": "^4.1.11",
-        "common-tags": "^1.8.0",
-        "html-minifier": "^3.5.19",
-        "luxon": "^1.3.1",
-        "markdown-it": "^8.4.2",
-        "markdown-it-anchor": "^5.0.2",
-        "moment": "^2.27.0",
-        "ramda": "^0.26.1",
-        "terser": "^4.4.3",
-        "uglifycss": "0.0.29"
-    }
+  "name": "scottmccracken.net",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^5.17.1"
+  }
 }
