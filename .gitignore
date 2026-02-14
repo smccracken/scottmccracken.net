@@ -1,6 +1,8 @@
+.astro
 .editorconfig
 .DS_Store
 .vscode
+.zed
 
 package-lock.json
 
