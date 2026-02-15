@@ -6,5 +6,11 @@ export default defineConfig({
   },
   prefetch: true,
   site: "https://scottmccracken.net",
+  redirects: {
+    "/about": "/",
+    "/bookmarks": "/",
+    "/projects": "/",
+    "/work": "/",
+  },
   trailingSlash: "never",
 });
