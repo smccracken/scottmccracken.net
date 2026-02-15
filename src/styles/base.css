@@ -1,0 +1,29 @@
+:root {
+  --color-light: #f2f2f2;
+  --flow-space: 1em;
+}
+
+body {
+  display: grid;
+  font-family: var(--font-sans);
+  font-size: 1.1rem;
+  font-weight: 400;
+  background-color: var(--color-light);
+  place-content: center;
+}
+
+section {
+  max-width: 60ch;
+}
+
+picture {
+  margin-inline: auto;
+}
+
+strong {
+  font-weight: 700;
+}
+
+.flow > * + * {
+  margin-block-start: var(--flow-space, 1em);
+}
