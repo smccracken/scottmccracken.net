@@ -1,52 +1,18 @@
 ---
-import { Font } from "astro:assets";
+import PageLayout from "../layouts/PageLayout.astro";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <Font cssVariable="--font-sans" preload />
-    <title>Scott McCracken, Front-End Web Developer</title>
-    <style>
-      body {
-        font-family: var(--font-sans);
-        font-size: 1.65rem;
-        font-weight: 400;
-        line-height: 1.3;
-        display: grid;
-        place-content: center;
-      }
-
-      section {
-        display: flex;
-        flex-direction: column;
-        width: 48ch;
-      }
-
-      picture {
-        margin-inline: auto;
-      }
-
-      strong {
-        font-weight: 700;
-      }
-    </style>
-  </head>
-  <body>
-    <section>
-      <p>
-        <strong>Scott McCracken</strong> is a <a href="https://www.linkedin.com/in/scottmccracken/">
-          software engineer and front-end web developer
-        </a> from Vermont. Ths website is in its <em>GeoCities Under Construction</em> phase.
-      </p>
-      <picture>
-        <source srcset="/under-construction.jpg" media="(prefers-reduced-motion: reduce)" />
-        <img src="/under-construction.gif" alt="A yellow construction sign with a figure shoveling a pile of dirt" />
-      </picture>
-    </section>
-  </body>
-</html>
+<PageLayout title="Scott McCracken" description="Scott is a software engineer and front-end developer in Vermont.">
+  <section class="flow">
+    <h1>
+      Scott McCracken is a <a href="https://www.linkedin.com/in/scottmccracken/">
+        software engineer and front-end web developer
+      </a> from Vermont.
+    </h1>
+    <p>This website is in its <em>GeoCities Under Construction</em> phase.</p>
+    <picture>
+      <source srcset="/under-construction.jpg" media="(prefers-reduced-motion: reduce)" />
+      <img src="/under-construction.gif" alt="A yellow construction sign with a figure shoveling a pile of dirt" />
+    </picture>
+  </section>
+</PageLayout>
