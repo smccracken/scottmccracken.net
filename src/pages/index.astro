@@ -1,3 +1,7 @@
+---
+import { Font } from "astro:assets";
+---
+
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -5,9 +9,11 @@
     <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
+    <Font cssVariable="--font-sans" preload />
     <title>Scott McCracken, Front-End Web Developer</title>
     <style>
       body {
+        font-family: var(--font-sans);
         font-size: 1.65rem;
         font-weight: 400;
         line-height: 1.3;
@@ -38,11 +44,8 @@
         </a> from Vermont. Ths website is in its <em>GeoCities Under Construction</em> phase.
       </p>
       <picture>
-        <source srcset="/public/under-construction.jpg" media="(prefers-reduced-motion: reduce)" />
-        <img
-          src="/public/under-construction.gif"
-          alt="A yellow construction sign with a figure shoveling a pile of dirt"
-        />
+        <source srcset="/under-construction.jpg" media="(prefers-reduced-motion: reduce)" />
+        <img src="/under-construction.gif" alt="A yellow construction sign with a figure shoveling a pile of dirt" />
       </picture>
     </section>
   </body>
