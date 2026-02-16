@@ -1,6 +1,13 @@
 import { defineConfig, fontProviders } from "astro/config";
 
+import cssnano from "cssnano";
+
 export default defineConfig({
+  css: {
+    postcss: {
+      plugins: [cssnano],
+    },
+  },
   devToolbar: {
     enabled: false,
   },

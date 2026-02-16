@@ -13,5 +13,8 @@
     "astro": "^5.17.1",
     "prettier": "^3.8.1",
     "prettier-plugin-astro": "^0.14.1"
+  },
+  "devDependencies": {
+    "cssnano": "^7.1.2"
   }
 }
