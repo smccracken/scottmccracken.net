@@ -6,12 +6,20 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "stylelint": "stylelint \"src/**/*.{css,astro}\"",
+    "stylelint:fix": "stylelint \"src/**/*.{css,astro}\" --fix"
   },
   "dependencies": {
     "@astrojs/ts-plugin": "^1.10.6",
     "astro": "^5.17.1",
     "prettier": "^3.8.1",
     "prettier-plugin-astro": "^0.14.1"
+  },
+  "devDependencies": {
+    "cssnano": "^7.1.2",
+    "stylelint": "^17.3.0",
+    "stylelint-config-html": "^1.1.0",
+    "stylelint-config-standard": "^40.0.0"
   }
 }
