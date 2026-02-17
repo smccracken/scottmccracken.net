@@ -6,6 +6,7 @@ const config = {
   rules: {
     "custom-property-pattern": null,
     "font-family-no-missing-generic-family-keyword": true,
+    "hue-degree-notation": "number",
     "keyframes-name-pattern": null,
     "property-no-unknown": true,
     "property-no-vendor-prefix": null,
