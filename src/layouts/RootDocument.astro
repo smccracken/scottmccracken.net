@@ -17,12 +17,15 @@ const pageTitle = Astro.url.pathname === "/" ? title : `${title} | Scott McCrack
 <html lang="en" data-theme>
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width" />
     <meta name="color-scheme" content="dark light" />
     <meta name="theme-color" content="#FCFCFC" />
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#222222" />
+    <Font cssVariable="--font-sans" preload />
+    <link rel="icon" type="image/svg+xml" sizes="any" href="/favicon.svg" />
+    <link rel="icon" href="/favicon-light.png" type="image/png" media="(prefers-color-scheme: light)" />
+    <link rel="icon" href="/favicon-dark.png" type="image/png" media="(prefers-color-scheme: dark)" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
     <meta property="og:title" content={title} />
@@ -31,10 +34,10 @@ const pageTitle = Astro.url.pathname === "/" ? title : `${title} | Scott McCrack
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:locale" content="en_US" />
     <meta property="og:site_name" content="Scott McCracken" />
+    <link rel="manifest" href="/manifest.json" />
     <script>
       import "../scripts/theme-toggle.js";
     </script>
-    <Font cssVariable="--font-sans" preload />
     <title>{pageTitle}</title>
   </head>
   <body>

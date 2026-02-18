@@ -1,0 +1,23 @@
+{
+  "name": "Scott McCracken",
+  "background_color": "#222222",
+  "description": "Accessible front-end engineer in Vermont.",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "favicon.ico",
+      "sizes": "16x16",
+      "type": "image/x-icon"
+    }
+  ],
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "start_url": "/",
+  "theme_color": "#222222"
+}
