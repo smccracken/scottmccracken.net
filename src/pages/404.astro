@@ -1,0 +1,20 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Page Not Found" description="Oops! This page could not be found and it's most likely my fault.">
+  <section class="flow">
+    <h1 class="title">
+      Scott McCracken is <a href="https://github.com/smccracken/scottmccracken.net">breaking things</a>.
+    </h1>
+    <p>
+      <a href="https://github.com/smccracken/scottmccracken.net/issues">File an issue</a> or you can <a href="/">
+        head to safety
+      </a>.
+    </p>
+    <picture>
+      <source srcset="/under-construction.jpg" media="(prefers-reduced-motion: reduce)" />
+      <img src="/under-construction.gif" alt="A yellow construction sign with a figure shoveling a pile of dirt" />
+    </picture>
+  </section>
+</BaseLayout>
