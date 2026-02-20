@@ -1,0 +1,9 @@
+@import "global/reset.css";
+@import "global/theme.css";
+@import "global/base.css";
+
+@import "utilities/flow.css";
+
+:root {
+  color-scheme: light dark;
+}

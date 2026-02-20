@@ -1,19 +1,9 @@
-:root {
-  --color-light: #fcfcfc;
-  --color-dark: #222;
-  --flow-space: 1em;
-
-  color-scheme: light dark;
-}
-
 body {
   color-scheme: light;
-  display: grid;
   font-family: var(--font-sans);
-  font-size: 1.1rem;
+  font-size: var(--text-size-base);
   font-weight: 400;
   background-color: var(--color-light);
-  place-content: center;
   will-change: transform;
   color: var(--color-dark);
 }
@@ -26,6 +16,25 @@ body {
   color: var(--color-light);
 }
 
+:is(h1, h2, h3, h4) {
+  line-height: var(--leading-fine);
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: var(--size-step-5);
+  max-width: 25ch;
+}
+
+h2 {
+  font-size: var(--size-step-4);
+  max-width: 35ch;
+}
+
+:is(h3, h4, h5, h6) {
+  font-size: var(--size-step-3);
+}
+
 section {
   max-width: 60ch;
 }
@@ -36,8 +45,4 @@ picture {
 
 strong {
   font-weight: 700;
-}
-
-.flow > * + * {
-  margin-block-start: var(--flow-space, 1em);
 }
