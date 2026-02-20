@@ -1,18 +1,21 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Container from "../components/Container.astro";
 ---
 
 <BaseLayout title="Scott McCracken" description="Scott is a software engineer and front-end developer in Vermont.">
-  <section class="flow">
-    <h1>
-      Scott McCracken is a <a href="https://www.linkedin.com/in/scottmccracken/">
-        software engineer and front-end web developer
-      </a> from Vermont.
-    </h1>
-    <p>This website is in its <em>GeoCities Under Construction</em> phase.</p>
-    <picture>
-      <source srcset="/under-construction.jpg" media="(prefers-reduced-motion: reduce)" />
-      <img src="/under-construction.gif" alt="A yellow construction sign with a figure shoveling a pile of dirt" />
-    </picture>
-  </section>
+  <Container>
+    <section class="flow">
+      <h1 style="max-width: 30ch;">
+        Scott McCracken is a <a href="https://www.linkedin.com/in/scottmccracken/"
+          >software engineer and front-end web developer</a
+        > from Vermont.
+      </h1>
+      <p>This website is in its <em>GeoCities Under Construction</em> phase.</p>
+      <picture>
+        <source srcset="/under-construction.jpg" media="(prefers-reduced-motion: reduce)" />
+        <img src="/under-construction.gif" alt="A yellow construction sign with a figure shoveling a pile of dirt" />
+      </picture>
+    </section>
+  </Container>
 </BaseLayout>
