@@ -1,0 +1,48 @@
+body {
+  color-scheme: light;
+  font-family: var(--font-sans);
+  font-size: var(--text-size-base);
+  font-weight: 400;
+  background-color: var(--color-light);
+  will-change: transform;
+  color: var(--color-dark);
+}
+
+[data-theme="dark"] body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color-scheme: dark;
+  background-color: var(--color-dark);
+  color: var(--color-light);
+}
+
+:is(h1, h2, h3, h4) {
+  line-height: var(--leading-fine);
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: var(--size-step-5);
+  max-width: 25ch;
+}
+
+h2 {
+  font-size: var(--size-step-4);
+  max-width: 35ch;
+}
+
+:is(h3, h4, h5, h6) {
+  font-size: var(--size-step-3);
+}
+
+section {
+  max-width: 60ch;
+}
+
+picture {
+  margin-inline: auto;
+}
+
+strong {
+  font-weight: 700;
+}
