@@ -1,0 +1,14 @@
+{
+  "extends": ["html-validate:recommended"],
+
+  "rules": {
+    "close-order": "error",
+    "no-inline-style": "off",
+    "prefer-native-element": [
+      "error",
+      {
+        "exclude": ["button"]
+      }
+    ]
+  }
+}
