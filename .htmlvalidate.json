@@ -9,7 +9,6 @@
       {
         "exclude": ["button"]
       }
-    ],
-    "void": ["warn", { "style": "omit" }]
+    ]
   }
 }

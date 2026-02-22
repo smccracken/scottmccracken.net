@@ -6,7 +6,7 @@
     "astro": "astro",
     "build": "astro build",
     "dev": "astro dev",
-    "htmllint": "pnpm build && pnpm exec html-validate dist/*.html",
+    "html-validate": "pnpm build && pnpm exec html-validate dist/*.html",
     "preview": "astro preview",
     "stylelint": "stylelint \"src/**/*.{css,astro}\"",
     "stylelint:fix": "stylelint \"src/**/*.{css,astro}\" --fix"
