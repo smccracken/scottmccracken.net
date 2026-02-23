@@ -1,10 +1,15 @@
 ---
 import Container from "./Container.astro";
+import Cluster from "./compositions/Cluster.astro";
+import Logo from "./Logo.astro";
 import ThemeToggle from "./ThemeToggle.astro";
 ---
 
 <header>
   <Container>
-    <ThemeToggle />
+    <Cluster horizontalAlignment="space-between">
+      <Logo />
+      <ThemeToggle />
+    </Cluster>
   </Container>
 </header>

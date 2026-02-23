@@ -33,7 +33,7 @@ import "../styles/blocks/theme-toggle.css";
 
   .theme-toggle {
     --size: var(--size-step-2);
-    --icon-fill: hsl(210 10% 30%);
+    --icon-fill: var(--color-dark);
     --icon-fill-hover: hsl(210 10% 15%);
 
     background: none;
@@ -55,7 +55,7 @@ import "../styles/blocks/theme-toggle.css";
     }
 
     [data-theme="dark"] & {
-      --icon-fill: hsl(210 10% 70%);
+      --icon-fill: var(--color-light);
       --icon-fill-hover: hsl(210 15% 90%);
     }
   }

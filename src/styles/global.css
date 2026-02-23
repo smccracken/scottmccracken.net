@@ -3,6 +3,7 @@
 @import "global/base.css";
 
 @import "utilities/flow.css";
+@import "utilities/visually-hidden.css";
 
 :root {
   color-scheme: light dark;
