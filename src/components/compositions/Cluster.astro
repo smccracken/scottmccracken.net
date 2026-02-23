@@ -1,0 +1,36 @@
+---
+interface Props {
+  direction?: string;
+  wrap?: string;
+  gap?: string;
+  verticalAlignment?: string;
+  horizontalAlignment?: string;
+}
+
+const { direction, wrap, gap, verticalAlignment, horizontalAlignment } = Astro.props;
+
+const cssVars = Object.fromEntries(
+  Object.entries({
+    "--cluster-direction": direction,
+    "--cluster-wrap": wrap,
+    "--space": gap,
+    "--cluster-vertical-alignment": verticalAlignment,
+    "--cluster-horizontal-alignment": horizontalAlignment,
+  }).filter(([, v]) => v !== undefined)
+);
+---
+
+<div class="cluster" style={cssVars}>
+  <slot />
+</div>
+
+<style>
+  .cluster {
+    display: flex;
+    flex-direction: var(--cluster-direction, row);
+    flex-wrap: var(--cluster-wrap, wrap);
+    gap: var(--space, 1rem);
+    align-items: var(--cluster-vertical-alignment, center);
+    justify-content: var(--cluster-horizontal-alignment, flex-start);
+  }
+</style>

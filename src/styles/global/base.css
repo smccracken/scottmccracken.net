@@ -46,3 +46,7 @@ picture {
 strong {
   font-weight: 700;
 }
+
+p {
+  margin-block: 0;
+}

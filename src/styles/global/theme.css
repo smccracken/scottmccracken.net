@@ -1,6 +1,6 @@
 :root {
-  --color-light: #fcfcfc;
-  --color-dark: #222;
+  --color-light: hsl(0 0% 98%);
+  --color-dark: hsl(210 10% 15%);
   --flow-space: 1em;
 
   --leading: 1.4;
