@@ -17,6 +17,11 @@
     "prettier": "^3.8.1",
     "prettier-plugin-astro": "^0.14.1"
   },
+  "pnpm": {
+    "overrides": {
+      "rollup": "^4.59.0"
+    }
+  },
   "devDependencies": {
     "cssnano": "^7.1.2",
     "html-validate": "^10.9.0",
