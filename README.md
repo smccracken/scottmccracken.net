@@ -33,9 +33,14 @@ Other handy scripts:
 | --- | --- |
 | `pnpm build` | Build the site for production |
 | `pnpm preview` | Preview the production build locally |
+| `pnpm check` | Run Astro type checking |
 | `pnpm html-validate` | Build and validate all HTML |
 | `pnpm stylelint` | Lint the CSS |
 | `pnpm stylelint:fix` | Lint the CSS and autofix what it can |
+
+### Git hooks
+
+A `pre-push` hook runs `pnpm check` before any push to catch type errors before they hit CI. It's wired up automatically when you run `pnpm install`.
 
 ## Deployment
 

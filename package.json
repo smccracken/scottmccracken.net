@@ -8,6 +8,7 @@
     "check": "astro check",
     "dev": "astro dev",
     "html-validate": "pnpm build && pnpm exec html-validate dist/*.html",
+    "prepare": "git config core.hooksPath .git-hooks",
     "preview": "astro preview",
     "stylelint": "stylelint \"src/**/*.{css,astro}\"",
     "stylelint:fix": "stylelint \"src/**/*.{css,astro}\" --fix"
