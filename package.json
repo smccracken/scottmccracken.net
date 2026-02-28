@@ -5,17 +5,21 @@
   "scripts": {
     "astro": "astro",
     "build": "astro build",
+    "check": "astro check",
     "dev": "astro dev",
     "html-validate": "pnpm build && pnpm exec html-validate dist/*.html",
+    "prepare": "git config core.hooksPath .git-hooks && chmod +x .git-hooks/*",
     "preview": "astro preview",
     "stylelint": "stylelint \"src/**/*.{css,astro}\"",
     "stylelint:fix": "stylelint \"src/**/*.{css,astro}\" --fix"
   },
   "dependencies": {
+    "@astrojs/check": "^0.9.6",
     "@astrojs/ts-plugin": "^1.10.6",
     "astro": "^5.17.3",
     "prettier": "^3.8.1",
-    "prettier-plugin-astro": "^0.14.1"
+    "prettier-plugin-astro": "^0.14.1",
+    "typescript": "^5.9.3"
   },
   "pnpm": {
     "overrides": {
