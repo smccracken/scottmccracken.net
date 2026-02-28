@@ -9,11 +9,17 @@
     "typeRoots": ["./src/types", "./node_modules/@types", "./public/scripts"],
     "plugins": [
       {
-        "name": "@astrojs/ts-plugin",
-      },
-    ],
+        "name": "@astrojs/ts-plugin"
+      }
+    ]
   },
   "extends": "astro/tsconfigs/strict",
-  "include": ["astro.config.ts", ".eslintrc.js", "./src/types/*.d.ts", ".astro/types.d.ts", "**/*"],
-  "exclude": ["node_modules", "dist"],
+  "include": [
+    "astro.config.ts",
+    ".eslintrc.js",
+    "./src/types/*.d.ts",
+    ".astro/types.d.ts",
+    "**/*"
+  ],
+  "exclude": ["node_modules", "dist"]
 }
