@@ -10,7 +10,7 @@ What's a personal site without a stack section?
 - **[Cloudflare Workers](https://workers.cloudflare.com/)** — hosting (experiment)
 - **[pnpm](https://pnpm.io/)** — package manager
 - **[TypeScript](https://www.typescriptlang.org/)** — types, because I enjoy a good error message
-- **[Stylelint](https://stylelint.io/) + [biome](https://biomejs.dev/)** — keeping the code tidy so I don't have to think about it
+- **[Stylelint](https://stylelint.io/) + [Biome](https://biomejs.dev/)** — keeping the code tidy
 - **[html-validate](https://html-validate.org/)** — making sure the HTML is actually valid HTML
 
 ## Local Development
@@ -33,7 +33,7 @@ Other handy scripts:
 | --- | --- |
 | `pnpm build` | Build the site for production |
 | `pnpm preview` | Preview the production build locally |
-| `pnpm check` | Run Astro type checking |
+| `pnpm check` | Run Astro type checking + Biome CLI |
 | `pnpm html-validate` | Build and validate all HTML |
 | `pnpm stylelint` | Lint the CSS |
 | `pnpm stylelint:fix` | Lint the CSS and autofix what it can |
