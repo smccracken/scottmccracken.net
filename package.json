@@ -4,9 +4,9 @@
   "version": "0.0.1",
   "scripts": {
     "astro": "astro",
+    "biome:fix": "biome check --write",
     "build": "astro build",
     "check": "astro check && biome check",
-    "check:fix": "biome check --write",
     "dev": "astro dev",
     "html-validate": "pnpm build && pnpm exec html-validate dist/*.html",
     "prepare": "git config core.hooksPath .git-hooks && chmod +x .git-hooks/*",
