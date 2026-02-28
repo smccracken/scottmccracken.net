@@ -1,0 +1,34 @@
+---
+import Container from "./Container.astro";
+
+const socialLinks = [
+  {
+    label: "GitHub",
+    url: "https://github.com/smccracken",
+  },
+  {
+    label: "LinkedIn",
+    url: "https://www.linkedin.com/in/scottmccracken/",
+  },
+  {
+    label: "Threads",
+    url: "https://www.threads.com/@scottmccracken",
+  },
+];
+---
+
+<footer class="region" data-flush="bottom">
+  <Container>
+    <nav aria-label="Social Links">
+      <ul role="list" class="cluster">
+        {
+          socialLinks.map((link) => (
+            <li>
+              <a href={link.url} aria-label={link.label} set:text={link.label} />
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+  </Container>
+</footer>
