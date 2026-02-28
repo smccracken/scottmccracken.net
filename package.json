@@ -23,7 +23,8 @@
   },
   "pnpm": {
     "overrides": {
-      "rollup": "^4.59.0"
+      "rollup": "^4.59.0",
+      "lodash": "^4.17.23"
     }
   },
   "devDependencies": {
