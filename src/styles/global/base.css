@@ -50,3 +50,19 @@ strong {
 p {
   margin-block: 0;
 }
+
+ul {
+  list-style-type: disc;
+  padding-inline-start: var(--global-ul-padding, 1.75ch);
+}
+
+ol {
+  padding-inline-start: var(--global-ol-padding, 1.75ch);
+}
+
+[role="list"][class],
+[role="tablist"] {
+  list-style: none;
+  margin-block: 0;
+  padding: 0;
+}
