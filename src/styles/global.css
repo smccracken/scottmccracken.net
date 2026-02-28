@@ -1,10 +1,10 @@
-@import "global/reset.css";
-@import "global/theme.css";
-@import "global/base.css";
-@import "composition/cluster.css";
-@import "utilities/flow.css";
-@import "utilities/region.css";
-@import "utilities/visually-hidden.css";
+@import url("global/reset.css");
+@import url("global/theme.css");
+@import url("global/base.css");
+@import url("composition/cluster.css");
+@import url("utilities/flow.css");
+@import url("utilities/region.css");
+@import url("utilities/visually-hidden.css");
 
 :root {
   color-scheme: light dark;
