@@ -35,7 +35,7 @@ jobs:
       - name: Install dependencies
         run: pnpm i --frozen-lockfile
 
-      - name: Run Astro check
+      - name: Run Astro check and Biome formatter + linter
         run: pnpm check
 
   html-validate:
