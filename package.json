@@ -8,7 +8,7 @@
     "check": "astro check",
     "dev": "astro dev",
     "html-validate": "pnpm build && pnpm exec html-validate dist/*.html",
-    "prepare": "git config core.hooksPath .git-hooks && chmod +x .git-hooks/*",
+    "prepare": "husky",
     "preview": "astro preview",
     "stylelint": "stylelint \"src/**/*.{css,astro}\"",
     "stylelint:fix": "stylelint \"src/**/*.{css,astro}\" --fix"
@@ -30,6 +30,7 @@
   "devDependencies": {
     "cssnano": "^7.1.2",
     "html-validate": "^10.9.0",
+    "husky": "^9.1.7",
     "stylelint": "^17.4.0",
     "stylelint-config-html": "^1.1.0",
     "stylelint-config-standard": "^40.0.0"

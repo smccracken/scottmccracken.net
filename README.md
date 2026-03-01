@@ -38,15 +38,13 @@ Other handy scripts:
 | `pnpm stylelint` | Lint the CSS |
 | `pnpm stylelint:fix` | Lint the CSS and autofix what it can |
 
-### Git hooks
-
-A `pre-push` hook runs `pnpm check` before any push to catch type errors before they hit CI. It's wired up automatically when you run `pnpm install`.
-
 ## Deployment
 
 The site is deployed on [Cloudflare Workers](https://workers.cloudflare.com/) via `wrangler`. If you're forking this for your own use, you'll need your own Cloudflare account and a `wrangler.jsonc` configured for it.
 
 ## CI/CD
+
+This site uses [Husky](https://typicode.github.io/husky/) to manage pre-commit hooks.
 
 A [GitHub Actions](https://github.com/features/actions) workflow runs on every push and pull request to `main`. It builds the site and validates the HTML — no broken markup sneaks through unnoticed.
 
