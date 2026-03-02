@@ -13,30 +13,23 @@ permissions:
 
 jobs:
   check:
-    name: Check
+    name: Check Code
     runs-on: ubuntu-latest
     if: ${{ github.actor != 'dependabot[bot]' }}
+    permissions:
+      contents: read
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4.2.0
+      - name: Checkout
+        uses: actions/checkout@v5
         with:
-          version: 10
-
-      - name: Use Node.js 22
-        uses: actions/setup-node@v4
+          persist-credentials: false
+      - name: Setup Biome
+        uses: biomejs/setup-biome@v2
         with:
-          node-version: 22
-          cache: "pnpm"
-
-      - name: Install dependencies
-        run: pnpm i --frozen-lockfile
-
-      - name: Run Astro check
-        run: pnpm check
+          version: latest
+      - name: Run Biome
+        run: biome ci .
 
   html-validate:
     name: HTML5 Validation
