@@ -5,20 +5,19 @@
   "scripts": {
     "astro": "astro",
     "build": "astro build",
-    "check": "astro check",
+    "check": "astro check && biome check",
+    "check:fix": "biome check --write",
     "dev": "astro dev",
     "html-validate": "pnpm build && pnpm exec html-validate dist/*.html",
     "prepare": "husky",
     "preview": "astro preview",
-    "stylelint": "stylelint \"src/**/*.{css,astro}\"",
-    "stylelint:fix": "stylelint \"src/**/*.{css,astro}\" --fix"
+    "style-lint": "stylelint \"src/**/*.{css,astro}\"",
+    "style-lint:fix": "stylelint \"src/**/*.{css,astro}\" --fix"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.6",
     "@astrojs/ts-plugin": "^1.10.6",
     "astro": "^5.17.3",
-    "prettier": "^3.8.1",
-    "prettier-plugin-astro": "^0.14.1",
     "typescript": "^5.9.3"
   },
   "pnpm": {
@@ -28,6 +27,7 @@
     }
   },
   "devDependencies": {
+    "@biomejs/biome": "2.4.4",
     "cssnano": "^7.1.2",
     "html-validate": "^10.9.0",
     "husky": "^9.1.7",
