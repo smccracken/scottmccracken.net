@@ -1,17 +1,16 @@
 ---
-
+const { class: className } = Astro.props;
 ---
 
-<div class="container">
+<div class:list={['container', className]}>
   <slot />
 </div>
 
 <style>
   .container {
-    box-sizing: content-box;
     margin-inline: auto;
-    width: calc(100% - (var(--space-xl) * 2));
-    max-inline-size: 800px;
-    padding-inline: var(--space-xl);
+    max-width: var(--wrapper-max-width);
+    padding-inline: var(--gutter-wrapper-inline, var(--gutter));
+    position: relative
   }
 </style>
