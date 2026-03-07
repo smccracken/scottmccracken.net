@@ -1,0 +1,10 @@
+.eyebrow {
+  font-size: var(--size-step--1);
+  font-weight: 500;
+  text-transform: uppercase;
+  text-align: left;
+  text-wrap: balance;
+  max-width: unset;
+  font-feature-settings: "cpsp" on;
+  display: block;
+}
