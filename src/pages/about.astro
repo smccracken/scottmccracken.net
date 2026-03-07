@@ -59,7 +59,7 @@ const timelineItems = [
 			  <li class="timeline__item">
 					<section class="timeline__header">
 					  <strong>{item.role} {item.descriptor || 'at'} <a href={item.company_url}>{item.company}</a></strong>
-						<date class="eyebrow">{item.dates}</date>
+						<time>{item.dates}</time>
 					</section>
 					<p>{item.description}</p>
 				</li>
@@ -85,7 +85,7 @@ const timelineItems = [
 		margin-bottom: 0;
 	}
 
-	.timeline__header > date {
+	.timeline__header > time {
 		font-weight: 500;
 		margin-bottom: 0.5rem;
 		text-transform: uppercase;
@@ -102,7 +102,7 @@ const timelineItems = [
 		line-height: var(--leading);
 	}
 
-	@media (min-width: 260px) {
+	@media (width >= 260px) {
   	.timeline::before {
   		content: "";
   		position: absolute;
@@ -112,6 +112,10 @@ const timelineItems = [
   		height: 100%;
   		background: linear-gradient(to bottom, var(--color-dark) 80%, var(--color-light) 90%);
   	}
+
+   :global([data-theme="dark"]) .timeline::before {
+   	background: linear-gradient(to bottom, var(--color-light) 80%, var(--color-dark) 90%);
+   }
 
   	.timeline__item {
   	  position: relative;
