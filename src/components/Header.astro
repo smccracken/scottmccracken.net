@@ -1,15 +1,42 @@
 ---
-import Container from './Container.astro';
-import Cluster from './compositions/Cluster.astro';
 import Logo from './Logo.astro';
 import ThemeToggle from './ThemeToggle.astro';
+
+const currentPath = Astro.url.pathname;
+const topLevelPath = currentPath.split('/')[1];
+
+const navItems = [
+  {
+    label: 'Home',
+    url: '/',
+  },
+  {
+    label: 'About',
+    url: '/about',
+  },
+];
 ---
 
 <header class="region">
-    <Container>
-        <Cluster horizontalAlignment="space-between">
-            <Logo />
-            <ThemeToggle />
-        </Cluster>
-    </Container>
+  <div class="cluster">
+    <nav aria-label="Main Navigation">
+      <ul class="cluster">
+        {navItems.map((item) => (
+          <li>
+            <a href={item.url} aria-current={topLevelPath === item.url.split("/")[1] ? "page" : undefined}>{item.label}</a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+    <ThemeToggle />
+  </div>
 </header>
+
+<style>
+  .cluster { --cluster-horizontal-alignment: space-between; }
+  nav .cluster { --cluster-horizontal-alignment: flex-end; }
+
+  [aria-current="page"] {
+    font-weight: 700;
+  }
+</style>
