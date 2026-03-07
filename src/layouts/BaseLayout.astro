@@ -1,5 +1,5 @@
 ---
-import '../styles/global.css';
+import '@/styles/global.css';
 
 import { Font } from 'astro:assets';
 
@@ -34,7 +34,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <meta property="og:site_name" content="Scott McCracken" />
     <link rel="manifest" href="/manifest.json" />
     <script>
-      import "../scripts/theme-toggle.js";
+      import "@/scripts/theme-toggle.js";
     </script>
     <title>{title}</title>
   </head>

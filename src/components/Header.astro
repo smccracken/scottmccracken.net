@@ -1,5 +1,6 @@
 ---
-import ThemeToggle from './ThemeToggle.astro';
+import Container from '@/components/Container.astro';
+import ThemeToggle from '@/components/ThemeToggle.astro';
 
 const currentPath = Astro.url.pathname;
 const topLevelPath = currentPath.split('/')[1];
@@ -17,6 +18,7 @@ const navItems = [
 ---
 
 <header class="region">
+  <Container>
   <div class="cluster">
     <nav aria-label="Main Navigation">
       <ul class="cluster">
@@ -29,6 +31,7 @@ const navItems = [
     </nav>
     <ThemeToggle />
   </div>
+  </Container>
 </header>
 
 <style>
