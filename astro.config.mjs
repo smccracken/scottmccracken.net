@@ -25,10 +25,9 @@ export default defineConfig({
   prefetch: true,
   site: 'https://scottmccracken.net',
   redirects: {
-    '/about': '/',
-    '/bookmarks': '/',
-    '/projects': '/',
-    '/work': '/',
+    '/bookmarks': { status: 301, destination: '/' },
+    '/projects': { status: 302, destination: '/' },
+    '/work': { status: 302, destination: '/' },
   },
   trailingSlash: 'never',
 });
