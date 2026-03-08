@@ -1,0 +1,95 @@
+---
+export interface TimelineItem {
+  date: string;
+  description: string;
+  title?: string;
+  titleUrl?: string;
+}
+
+interface Props {
+  items: TimelineItem[];
+}
+
+const { items } = Astro.props;
+---
+
+<ol class="timeline flow flow-space-l-xl">
+  {items.map((item) => (
+    <li class="timeline__item">
+      <section class="timeline__header">
+        {item.title && (
+          <strong>
+            {item.titleUrl ? <a href={item.titleUrl}>{item.title}</a> : item.title}
+          </strong>
+        )}
+        <time>{item.date}</time>
+      </section>
+      <p>{item.description}</p>
+    </li>
+  ))}
+</ol>
+
+<style>
+  .timeline {
+    --timeline-marker-size: var(--size-step--2);
+
+    position: relative;
+    margin: var(--space-l) 0;
+  }
+
+  .timeline__item:last-child {
+    margin-bottom: 0;
+  }
+
+  .timeline__header > time {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+  }
+
+  .timeline__header > strong {
+    display: block;
+    font-weight: 500;
+    line-height: var(--leading);
+  }
+
+  .timeline__item > p {
+    line-height: var(--leading);
+  }
+
+  @media (width >= 260px) {
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: calc((var(--timeline-marker-size) / 2) - 1px);
+      top: 10px;
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(to bottom, var(--color-dark) 80%, var(--color-light) 90%);
+    }
+
+    :global([data-theme="dark"]) .timeline::before {
+      background: linear-gradient(to bottom, var(--color-light) 80%, var(--color-dark) 90%);
+    }
+
+    .timeline__item {
+      position: relative;
+      padding-left: calc(var(--timeline-marker-size) + 1.5rem);
+    }
+
+    .timeline__item::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 10px;
+      width: var(--timeline-marker-size);
+      aspect-ratio: 1;
+      background: var(--color-light);
+      border: 2px solid var(--color-dark);
+      border-radius: 50%;
+      z-index: 1;
+    }
+  }
+</style>

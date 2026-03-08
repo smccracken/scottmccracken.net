@@ -1,0 +1,36 @@
+---
+import Container from '@/components/Container.astro';
+import Timeline, { type TimelineItem } from '@/components/Timeline.astro';
+import TitleBlock from '@/components/TitleBlock.astro';
+import PageLayout from '@/layouts/PageLayout.astro';
+
+const nowItems: TimelineItem[] = [
+  {
+    date: 'March 2026',
+    description:
+      'Rebuilding my personal site with Astro. Leaning into the simplicity of static HTML and getting back to caring about the small details.',
+  },
+  {
+    date: 'January 2026',
+    description:
+      'Deep in accessibility tooling at work. Spending a lot of time thinking about how to surface violations in ways that are actually actionable for developers.',
+  },
+  {
+    date: 'November 2025',
+    description:
+      'Reading a lot, skiing when there is snow, and perfecting a red lentil soup recipe that may be the best thing I have ever made.',
+  },
+];
+---
+
+<PageLayout title="Now — Scott McCracken" description="What Scott McCracken is up to right now.">
+  <Container class="flow">
+    <TitleBlock>
+      <h1><span class="eyebrow">What is Scott up to</span> Now</h1>
+    </TitleBlock>
+
+    <section class="flow">
+      <Timeline items={nowItems} />
+    </section>
+  </Container>
+</PageLayout>

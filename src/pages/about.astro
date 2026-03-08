@@ -1,41 +1,37 @@
 ---
 import Container from '@/components/Container.astro';
+import Timeline, { type TimelineItem } from '@/components/Timeline.astro';
 import TitleBlock from '@/components/TitleBlock.astro';
 import PageLayout from '@/layouts/PageLayout.astro';
 
-const timelineItems = [
+const timelineItems: TimelineItem[] = [
   {
-    role: 'Software Engineer',
-    company: 'Accessible Web',
-    company_url: 'https://accessibleweb.com',
-    dates: 'July 2021 – Present',
+    title: 'Software Engineer at Accessible Web',
+    titleUrl: 'https://accessibleweb.com',
+    date: 'July 2021 – Present',
     description:
-      'Currently working on a small team of developers building tools and monitoring services to help others fix accessibility violations with their websites and applications. Accessibility is so important, but it can also be hard. My goal is to find a way to make it better.',
+      'Building tools and monitoring services to help others fix accessibility violations with their websites and applications.',
   },
   {
-    role: 'Director of Web Development',
-    company: 'CarComplaints.com',
-    company_url: 'https://www.carcomplaints.com',
-    dates: 'May 2010 – July 2021',
+    title: 'Director of Web Development at CarComplaints.com',
+    titleUrl: 'https://www.carcomplaints.com',
+    date: 'May 2010 – July 2021',
     description:
-      "Built content management for a network of car related sites. I don't even like cars! My goals were to expand reach and boost return visitors by managing custom email newsletters and building microsites aimed at turning car problems into solutions.",
+      'Managed content and expanded audience reach for a large network of car related sites aimed at turning car problems into solutions.',
   },
   {
-    role: 'Web Development Instructor',
-    company: 'Vermont HITEC',
-    company_url: 'https://www.accessibleweb.com',
-    descriptor: 'with',
-    dates: 'February 2007 – April 2007',
+    title: 'Web Development Instructor with Vermont HITEC',
+    titleUrl: 'https://www.accessibleweb.com',
+    date: 'February 2007 – April 2007',
     description:
-      'Took a leap and built a course on-the-fly to teach Vermont residents with no prior experience how to build website templates to be used at Dealer.com. It was a grind but in the end each student passed and landed a job as a front-end developer.',
+      'Developed a course to teach Vermont residents with no prior web development experience how to build flexible and customizable templates, from start to finish.',
   },
   {
-    role: 'Senior Front End Developer',
-    company: 'Dealer.com',
-    company_url: 'https://www.dealer.com',
-    dates: 'September 2003 – May 2010',
+    title: 'Senior Front End Developer at Dealer.com',
+    titleUrl: 'https://www.dealer.com',
+    date: 'September 2003 – May 2010',
     description:
-      "Not everyone was on board when I suggested that we compliment our catalog of Flash-based templates with some pure HTML counterparts to see how they perform. I'll always go out on a limb for HTML and that decision really paid off here for the SEO and accessibility benefits.",
+      'Focused on building highly performant and customizable templates for car dealership websites. I pushed forward an initiative to make our templates more accessible and SEO friendly.',
   },
 ];
 ---
@@ -54,17 +50,7 @@ const timelineItems = [
 
       <p>That said, I’ve also worked across the full stack long enough to know that great front-end work doesn't happen in isolation. Servers, databases, APIs — it all shapes the end product.</p>
 
-			<ol class="timeline flow flow-space-l-xl">
-			{timelineItems.map((item) => (
-			  <li class="timeline__item">
-					<section class="timeline__header">
-					  <strong>{item.role} {item.descriptor || 'at'} <a href={item.company_url}>{item.company}</a></strong>
-						<time>{item.dates}</time>
-					</section>
-					<p>{item.description}</p>
-				</li>
-			))}
-			</ol>
+      <Timeline items={timelineItems} />
 
       <h2>Outside of Work</h2>
       <p>Off the clock, life in northern Vermont keeps things grounded. There's a garden to tend, two rescue mutts to walk, and — thanks to a mostly vegetarian household — a genuinely excellent pot of beans to perfect. When I'm not staring at a screen, I'm usually skiing, hiking, or taking photographs. Someday I'll get around to woodworking.</p>
@@ -72,68 +58,3 @@ const timelineItems = [
 
   </Container>
 </PageLayout>
-
-<style>
-  .timeline {
-    --timeline-marker-size: var(--size-step--2);
-
-    position: relative;
-		margin: var(--space-l) 0;
-	}
-
-	.timeline__item:last-child {
-		margin-bottom: 0;
-	}
-
-	.timeline__header > time {
-		font-weight: 500;
-		margin-bottom: 0.5rem;
-		text-transform: uppercase;
-		letter-spacing: 0.025em;
-	}
-
-	.timeline__header > strong {
-	  display: block;
-		font-weight: 500;
-		line-height: var(--leading);
-	}
-
-	.timeline__item > p {
-		line-height: var(--leading);
-	}
-
-	@media (width >= 260px) {
-  	.timeline::before {
-  		content: "";
-  		position: absolute;
-  		left: calc((var(--timeline-marker-size) / 2) - 1px);
-  		top: 10px;
-  		width: 2px;
-  		height: 100%;
-  		background: linear-gradient(to bottom, var(--color-dark) 80%, var(--color-light) 90%);
-  	}
-
-   :global([data-theme="dark"]) .timeline::before {
-   	background: linear-gradient(to bottom, var(--color-light) 80%, var(--color-dark) 90%);
-   }
-
-  	.timeline__item {
-  	  position: relative;
-  		padding-left: calc(var(--timeline-marker-size) + 1.5rem);
-  	}
-
-  	.timeline__item::before {
-  	  content: '';
-  		position: absolute;
-  		left: 0;
-  		top: 10px;
-  		width: var(--timeline-marker-size);
-  		aspect-ratio: 1;
-  		background: var(--color-light);
-  		border: 2px solid var(--color-dark);
-  		border-radius: 50%;
-  		z-index: 1;
-  	}
-	}
-
-</style>
