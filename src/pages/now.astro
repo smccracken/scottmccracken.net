@@ -1,26 +1,28 @@
 ---
+import { getCollection } from 'astro:content';
 import Container from '@/components/Container.astro';
 import Timeline, { type TimelineItem } from '@/components/Timeline.astro';
 import TitleBlock from '@/components/TitleBlock.astro';
 import PageLayout from '@/layouts/PageLayout.astro';
 
-const nowItems: TimelineItem[] = [
-  {
-    date: 'March 2026',
-    description:
-      'Rebuilding my personal site with Astro. Leaning into the simplicity of static HTML and getting back to caring about the small details.',
-  },
-  {
-    date: 'January 2026',
-    description:
-      'Deep in accessibility tooling at work. Spending a lot of time thinking about how to surface violations in ways that are actually actionable for developers.',
-  },
-  {
-    date: 'November 2025',
-    description:
-      'Reading a lot, skiing when there is snow, and perfecting a red lentil soup recipe that may be the best thing I have ever made.',
-  },
-];
+const entries = await getCollection('now');
+
+entries.sort((a, b) => b.id.localeCompare(a.id));
+
+function formatEntryDate(id: string): string {
+  const [year, month] = id.replace(/\.[^.]+$/, '').split('-');
+  const date = new Date(`${year}-${month}-01T00:00:00Z`);
+  return date.toLocaleDateString('en-US', {
+    month: 'long',
+    year: 'numeric',
+    timeZone: 'UTC',
+  });
+}
+
+const nowItems: TimelineItem[] = entries.map((entry) => ({
+  date: formatEntryDate(entry.id),
+  description: entry.body?.trim() ?? '',
+}));
 ---
 
 <PageLayout title="Now — Scott McCracken" description="What Scott McCracken is up to right now.">
