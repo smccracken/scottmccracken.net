@@ -38,6 +38,9 @@ const timelineItems = [
       "Not everyone was on board when I suggested that we compliment our catalog of Flash-based templates with some pure HTML counterparts to see how they perform. I'll always go out on a limb for HTML and that decision really paid off here for the SEO and accessibility benefits.",
   },
 ];
+
+const currentYear = new Date().getFullYear();
+const careerSpan = currentYear - 2003;
 ---
 
 <PageLayout title="About Scott McCracken" description="Front-end developer living in Vermont.">
@@ -48,12 +51,19 @@ const timelineItems = [
     </TitleBlock>
 
     <section class="flow">
-      <p>Building for the web has been my thing ever since I scrabbled together my first GeoCities site over a spotty dial-up connection. I've been hooked ever since and have managed to turn that into a 23-year career.</p>
+      <p>
+        Building for the web got its hooks in me early. I remember the <em><span aria-hidden>✨</span>magic<span aria-hidden>✨</span></em> of cobbling together my first GeoCities site over a spotty dial-up connection and seeing it online.
+        That feeling has stayed with me over the course of a {careerSpan || '20+'}-year career.
+      </p>
 
-      <p>Over that time I’ve been happiest in the front of the front-end, where small details can have <em>big</em> impacts on how an interface feels to use. No matter my role <mark>I always advocate for the user</mark>.</p>
+      <p>
+        I'm happiest in the front of the front-end, working on the small details that have big impacts on the usability of an interface.
+        However I’ve worked across the full stack long enough to know that great front-end work doesn't happen in isolation. Servers, databases, APIs — it all shapes the end product.
+      </p>
 
-      <p>That said, I’ve also worked across the full stack long enough to know that great front-end work doesn't happen in isolation. Servers, databases, APIs — it all shapes the end product.</p>
+      <p><mark>I am an advocate for the user</mark> and believe the web is for everyone. Sites should be self-explanatory, accessible by default, and a joy to use.</p>
 
+      <h2>Work History</h2>
 			<ol class="timeline flow flow-space-l-xl">
 			{timelineItems.map((item) => (
 			  <li class="timeline__item">
@@ -67,9 +77,14 @@ const timelineItems = [
 			</ol>
 
       <h2>Outside of Work</h2>
-      <p>Off the clock, life in northern Vermont keeps things grounded. There's a garden to tend, two rescue mutts to walk, and — thanks to a mostly vegetarian household — a genuinely excellent pot of beans to perfect. When I'm not staring at a screen, I'm usually skiing, hiking, or taking photographs. Someday I'll get around to woodworking.</p>
+      <p>
+        Off the clock, life in northern Vermont keeps things grounded &#8212; there's a veggie garden to tend, two rescue mutts to walk, and backyard birds to care for.
+        I like to cook for my mostly vegetarian family and am working hard on perfecting a pot of beans.
+      </p>
+      <p>
+        Most of my days are spent staring at a screen so I try to balance that with skiing, hiking, or taking photographs. Someday I'll get around to woodworking.
+      </p>
     </section>
-
   </Container>
 </PageLayout>
 
