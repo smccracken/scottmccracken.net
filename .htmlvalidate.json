@@ -3,6 +3,7 @@
 
   "rules": {
     "close-order": "error",
+    "no-trailing-whitespace": "off",
     "no-inline-style": "off",
     "prefer-native-element": [
       "error",
