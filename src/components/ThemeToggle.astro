@@ -53,7 +53,7 @@
       stroke-linecap: round;
     }
 
-    [data-theme="dark"] & {
+    :global([data-theme="dark"]) & {
       --icon-fill: var(--color-light);
       --icon-fill-hover: hsl(210 15% 90%);
     }
@@ -66,19 +66,11 @@
 
     & > :is(.moon, .sun) {
       fill: var(--icon-fill);
-
-      .theme-toggle:is(:hover, :focus-visible) > & {
-        fill: var(--icon-fill-hover);
-      }
     }
 
     & > .sun-beams {
       stroke: var(--icon-fill);
       stroke-width: 2px;
-
-      .theme-toggle:is(:hover, :focus-visible) & {
-        stroke: var(--icon-fill-hover);
-      }
     }
 
     [data-theme="dark"] & {
@@ -128,5 +120,13 @@
         }
       }
     }
+  }
+
+  .theme-toggle:is(:hover, :focus-visible) > .sun-and-moon > :is(.moon, .sun) {
+    fill: var(--icon-fill-hover);
+  }
+
+  .theme-toggle:is(:hover, :focus-visible) > .sun-and-moon > .sun-beams {
+    stroke: var(--icon-fill-hover);
   }
 </style>
