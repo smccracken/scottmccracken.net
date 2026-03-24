@@ -11,6 +11,9 @@ export default defineConfig({
   devToolbar: {
     enabled: false,
   },
+  experimental: {
+    rustCompiler: true,
+  },
   fonts: [
     {
       provider: fontProviders.fontsource(),
