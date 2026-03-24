@@ -15,7 +15,8 @@
     "style-lint:fix": "stylelint \"src/**/*.{css,astro}\" --fix"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.8",
+    "@astrojs/check": "^0.9.7",
+    "@astrojs/compiler-rs": "^0.1.4",
     "@astrojs/ts-plugin": "^1.10.7",
     "astro": "^6.0.5",
     "typescript": "^5.9.3"
