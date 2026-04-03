@@ -2,6 +2,10 @@
 
 One of the beatiful things about the web is learning from others who have authored or shared smart solutions that make building websites a little bit nicer.
 
+## Assets
+
+- **Icons** – The simply delightful [remix icons](https://remixicon.com/)
+
 ## Inspiration & References
 
 - **Setting up Biome with Astro** – [Astro Tips](https://astro-tips.dev/tips/biome/), [Eva Decker](https://github.com/evadecker/eva.town/blob/main/biome.jsonc), and [Princesseuh](https://github.com/withastro/language-tools/blob/main/biome.json) all have good starting points for Biome + Astro. I'm hoping Astro support continues to evolve because [Biome](https://biomejs.dev/) is ⚡ _fast_ ⚡.
