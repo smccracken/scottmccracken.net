@@ -66,3 +66,9 @@ ol {
   margin-block: 0;
   padding: 0;
 }
+
+a:has(svg) {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25ch;
+}
