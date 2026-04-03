@@ -4,6 +4,8 @@ body {
   font-size: var(--text-size-base);
   font-weight: 400;
   background-color: var(--color-light);
+  background-image: url("stars-light.svg");
+  background-repeat: repeat;
   will-change: transform;
   color: var(--color-dark);
 }
@@ -13,6 +15,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   color-scheme: dark;
   background-color: var(--color-dark);
+  background-image: url("stars-dark.svg");
   color: var(--color-light);
 }
 
