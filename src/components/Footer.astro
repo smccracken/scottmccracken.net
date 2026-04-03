@@ -1,6 +1,7 @@
 ---
 
 import Container from '@/components/Container.astro';
+import Icon from './Icon/Icon.astro';
 
 const socialLinks = [
   {
@@ -20,16 +21,23 @@ const socialLinks = [
 
 <footer class="region" data-flush="bottom">
   <Container>
-    <nav aria-label="Social Links">
-      <ul class="cluster">
-        {
-          socialLinks.map((link) => (
-            <li>
-              <a href={link.url} rel="me" set:text={link.label} />
-            </li>
-          ))
-        }
-      </ul>
-    </nav>
+    <div class="cluster">
+      <nav aria-label="Social Links">
+        <ul class="cluster">
+          {
+            socialLinks.map((link) => (
+              <li>
+                <a href={link.url} rel="me" set:text={link.label} />
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+      <Icon name="rocket2" />
+    </div>
   </Container>
 </footer>
+
+<style>
+  .cluster { --cluster-horizontal-alignment: space-between; }
+</style>
