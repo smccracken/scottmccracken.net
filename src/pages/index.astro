@@ -52,7 +52,7 @@ const featuredProjects = [
           <p class="hero__lede">
             Software engineer and frontend web developer the focuses on building simple, accessible interfaces that are a joy to use.
           </p>
-          <ul class="cluster flow-space-l" role="list">
+          <ul class="cluster flow-space-l list-none">
             <li>
               <Button href="https://github.com/smccracken" rel="me">
                 View GitHub <span aria-hidden="true">&#8599;</span>
@@ -118,7 +118,7 @@ const featuredProjects = [
     <section class="region flow">
       <h2><span class="prompt">$</span> git log --featured</h2>
       <p class="section-lede">Selected projects, one commit at a time.</p>
-      <ol class="log flow flow-space-xl" role="list">
+      <ol class="log flow flow-space-xl list-none">
         {
           featuredProjects.map((project) => (
             <li class="log__item flow">
@@ -139,7 +139,7 @@ const featuredProjects = [
       <h2 class="visually-hidden">Outside of work</h2>
       <div class="ls-panel flow">
         <p><span class="prompt">$</span> ls ~/outside-of-work</p>
-        <ul class="cluster" role="list">
+        <ul class="cluster list-none">
           <li><Chip>gardening/</Chip></li>
           <li><Chip>photography/</Chip></li>
           <li><Chip>guitar/</Chip></li>
