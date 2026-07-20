@@ -1,35 +1,79 @@
 ---
-
+import Button from '@/components/Button.astro';
 import Container from '@/components/Container.astro';
 
 const socialLinks = [
   {
     label: 'GitHub',
     url: 'https://github.com/smccracken',
+    variant: 'primary',
   },
   {
     label: 'LinkedIn',
     url: 'https://www.linkedin.com/in/scottmccracken/',
+    variant: 'ghost',
   },
   {
     label: 'Threads',
     url: 'https://www.threads.com/@scottmccracken',
+    variant: 'ghost',
   },
-];
+] as const;
+
+const currentYear = new Date().getFullYear();
 ---
 
-<footer class="region" data-flush="bottom">
+<footer class="region">
   <Container>
-    <nav aria-label="Social Links">
-      <ul class="cluster">
-        {
-          socialLinks.map((link) => (
-            <li>
-              <a href={link.url} rel="me" set:text={link.label} />
-            </li>
-          ))
-        }
-      </ul>
-    </nav>
+    <div class="contact-panel flow">
+      <p class="contact-panel__label"><span class="prompt">$</span> cat contact.txt</p>
+      <h2 class="contact-panel__title">Let&#8217;s fix something on the web together.</h2>
+      <nav aria-label="Social Links" class="flow-space-l">
+        <ul class="cluster list-none">
+          {
+            socialLinks.map((link) => (
+              <li>
+                <Button href={link.url} variant={link.variant} rel="me">
+                  {link.label} <span aria-hidden="true">&#8599;</span>
+                </Button>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+      <p class="contact-panel__meta flow-space-xl">
+        // built with too much coffee, some Flexbox, and a healthy respect for
+        alt text. &copy; {currentYear} Scott McCracken.
+      </p>
+    </div>
   </Container>
 </footer>
+
+<style>
+  .contact-panel {
+    background-color: var(--color-panel);
+    color: var(--color-on-panel);
+    border: 1px solid var(--color-border);
+    border-radius: var(--rounded-md);
+    padding: var(--space-xl-2xl) var(--space-l-xl);
+  }
+
+  .contact-panel__label {
+    font-size: var(--text-size-label);
+    color: var(--color-panel-accent);
+  }
+
+  .contact-panel__label .prompt {
+    color: var(--color-panel-accent);
+  }
+
+  .contact-panel__title {
+    color: var(--color-gray-10);
+    max-width: 25ch;
+  }
+
+  .contact-panel__meta {
+    font-size: var(--text-size-label);
+    color: var(--color-gray-8);
+  }
+</style>

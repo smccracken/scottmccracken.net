@@ -2,8 +2,11 @@
 @import url("global/theme.css");
 @import url("global/base.css");
 @import url("composition/cluster.css");
+@import url("composition/grid.css");
+@import url("composition/sidebar.css");
 @import url("utilities/eyebrow.css");
 @import url("utilities/flow.css");
+@import url("utilities/prompt.css");
 @import url("utilities/region.css");
 @import url("utilities/visually-hidden.css");
 

@@ -44,7 +44,7 @@ const careerSpan = currentYear - 2003;
 ---
 
 <PageLayout title="About Scott McCracken" description="Front-end developer living in Vermont.">
-  <Container class="flow">
+  <Container>
     <TitleBlock>
       <h1><span class="eyebrow">About</span> Scott McCracken</h1>
       <h2>Front-end developer from Vermont.</h2>
@@ -101,7 +101,10 @@ const careerSpan = currentYear - 2003;
 	}
 
 	.timeline__header > time {
+		display: block;
+		font-size: var(--text-size-meta);
 		font-weight: 500;
+		line-height: var(--leading);
 		margin-bottom: 0.5rem;
 		text-transform: uppercase;
 		letter-spacing: 0.025em;
@@ -125,12 +128,8 @@ const careerSpan = currentYear - 2003;
   		top: 10px;
   		width: 2px;
   		height: 100%;
-  		background: linear-gradient(to bottom, var(--color-dark) 80%, var(--color-light) 90%);
+  		background: linear-gradient(to bottom, var(--color-border) 80%, var(--color-bg) 90%);
   	}
-
-   :global([data-theme="dark"]) .timeline::before {
-   	background: linear-gradient(to bottom, var(--color-light) 80%, var(--color-dark) 90%);
-   }
 
   	.timeline__item {
   	  position: relative;
@@ -144,8 +143,8 @@ const careerSpan = currentYear - 2003;
   		top: 10px;
   		width: var(--timeline-marker-size);
   		aspect-ratio: 1;
-  		background: var(--color-light);
-  		border: 2px solid var(--color-dark);
+  		background: var(--color-bg);
+  		border: 2px solid var(--color-border-strong);
   		border-radius: 50%;
   		z-index: 1;
   	}
