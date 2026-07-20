@@ -1,33 +1,369 @@
 ---
+import Button from '@/components/Button.astro';
+import Chip from '@/components/Chip.astro';
 import Container from '@/components/Container.astro';
+import FileCard from '@/components/FileCard.astro';
+import TerminalWindow from '@/components/TerminalWindow.astro';
 import PageLayout from '@/layouts/PageLayout.astro';
+
+const featuredProjects = [
+  {
+    tag: 'site2026',
+    name: 'This Website',
+    place: 'GitHub',
+    place_url: 'https://github.com/smccracken',
+    dates: '2026 — Ongoing',
+    description:
+      'A terminal-themed rebuild of scottmccracken.net with Astro, a hand-rolled design system, and zero JavaScript frameworks. The site you are reading right now.',
+  },
+  {
+    tag: 'a11y2025',
+    name: 'Accessibility Bookmarklets',
+    place: 'GitHub',
+    place_url: 'https://github.com/smccracken',
+    dates: '2025',
+    description:
+      'A pocketful of one-click checks for headings, landmarks, and alt text. Placeholder project — real write-up coming soon.',
+  },
+  {
+    tag: 'seed2024',
+    name: 'Garden Log',
+    place: 'GitHub',
+    place_url: 'https://github.com/smccracken',
+    dates: '2024',
+    description:
+      'A tiny static site for tracking what got planted, what survived, and what the deer ate. Placeholder project — real write-up coming soon.',
+  },
+];
 ---
 
 <PageLayout
-    title="Scott McCracken"
-    description="Scott is a software engineer and front-end developer in Vermont."
+  title="Scott McCracken"
+  description="Scott is a software engineer and front-end developer in Vermont."
 >
-    <Container>
-        <section class="flow">
-            <h1>
-                Scott McCracken is a <a
-                    href="https://www.linkedin.com/in/scottmccracken/"
-                    >front-end developer</a
-                > from Vermont.
-            </h1>
-            <p>
-                This website is in its <em>GeoCities Under Construction</em> phase.
-            </p>
-            <picture>
-                <source
-                    srcset="/under-construction.jpg"
-                    media="(prefers-reduced-motion: reduce)"
-                />
-                <img
-                    src="/under-construction.gif"
-                    alt="A yellow construction sign with a figure shoveling a pile of dirt"
-                />
-            </picture>
-        </section>
-    </Container>
+  <Container>
+    <section class="region hero">
+      <div class="with-sidebar">
+        <div class="flow">
+          <p class="status-pill">
+            <span class="prompt">$</span> status --available-for-interesting-things
+          </p>
+          <h1 class="hero__title flow-space-s">Scott McCracken</h1>
+          <p class="hero__lede">
+            Software engineer and frontend web developer the focuses on building simple, accessible interfaces that are a joy to use.
+          </p>
+          <ul class="cluster flow-space-l" role="list">
+            <li>
+              <Button href="https://github.com/smccracken" rel="me">
+                View GitHub <span aria-hidden="true">&#8599;</span>
+              </Button>
+            </li>
+            <li>
+              <Button href="/contact" variant="secondary">
+                Say hi <span aria-hidden="true">&#128075;</span>
+              </Button>
+            </li>
+          </ul>
+        </div>
+        <div class="sidebar">
+          <TerminalWindow title="whoami.sh">
+            <p><span class="prompt">$</span> whoami</p>
+            <p>front-end developer from Vermont</p>
+            <p><span class="prompt">$</span> cat philosophy.md</p>
+            <p>simple always wins.</p>
+            <p>build it accessible, or don't ship it.</p>
+            <p><span class="prompt">$</span> uptime</p>
+            <p>23 years professionally, still delighted by a good :hover state</p>
+          </TerminalWindow>
+        </div>
+      </div>
+    </section>
+
+    <section class="region">
+      <h2 class="visually-hidden">At a glance</h2>
+      <div class="grid">
+        <FileCard title="~/about.md">
+          <p>
+            Twenty-three years turning good intentions into usable interfaces
+            &#8212; happiest in the front of the front-end, full-stack when it
+            counts.
+          </p>
+          <p><a class="card-link" href="/about">cat --full &#8594;</a></p>
+        </FileCard>
+        <FileCard title="~/interests">
+          <p><span class="prompt">$</span> ./interests --current</p>
+          <p class="interests__current">
+            <a href="/about" id="hobby-link"
+              ><span id="hobby-label">the veggie garden</span>
+              <span aria-hidden="true">&#8599;</span></a
+            >
+          </p>
+          <span
+            class="visually-hidden"
+            id="hobby-announce"
+            aria-live="polite"></span>
+          <p class="flow-space-l">
+            <button type="button" class="shuffle" id="hobby-shuffle">
+              [ shuffle ]
+            </button>
+          </p>
+        </FileCard>
+        <div class="photo-card">
+          <p class="photo-card__hint">Photo of the month coming soon</p>
+          <Chip variant="neutral">photography <span aria-hidden="true">&#8599;</span></Chip>
+        </div>
+      </div>
+    </section>
+
+    <section class="region flow">
+      <h2><span class="prompt">$</span> git log --featured</h2>
+      <p class="section-lede">Selected projects, one commit at a time.</p>
+      <ol class="log flow flow-space-xl" role="list">
+        {
+          featuredProjects.map((project) => (
+            <li class="log__item flow">
+              <h3 class="log__title">
+                <Chip variant="neutral">{project.tag}</Chip>
+                {project.name} @{' '}
+                <a href={project.place_url}>{project.place}</a>
+                <time class="log__dates">{project.dates}</time>
+              </h3>
+              <p class="log__description flow-space-2xs">{project.description}</p>
+            </li>
+          ))
+        }
+      </ol>
+    </section>
+
+    <section class="region" data-flush="bottom">
+      <h2 class="visually-hidden">Outside of work</h2>
+      <div class="ls-panel flow">
+        <p><span class="prompt">$</span> ls ~/outside-of-work</p>
+        <ul class="cluster" role="list">
+          <li><Chip>gardening/</Chip></li>
+          <li><Chip>photography/</Chip></li>
+          <li><Chip>guitar/</Chip></li>
+          <li><Chip variant="draft">skiing.draft.txt|</Chip></li>
+          <li><Chip variant="neutral">woodworking.todo</Chip></li>
+        </ul>
+      </div>
+    </section>
+  </Container>
 </PageLayout>
+
+<script>
+  const shuffleButton = document.getElementById('hobby-shuffle');
+  const hobbyLabel = document.getElementById('hobby-label');
+  const announcer = document.getElementById('hobby-announce');
+  const hobbies = [
+    'the veggie garden',
+    'two rescue mutts',
+    'backyard birds',
+    'a pot of beans',
+    'skiing',
+    'hiking',
+    'photography',
+    'guitar practice',
+  ];
+  const TICK_COUNT = 14;
+  const TICK_MS = 70;
+
+  shuffleButton?.addEventListener('click', () => {
+    if (!hobbyLabel || shuffleButton.hasAttribute('disabled')) return;
+
+    const startIndex = Math.max(
+      0,
+      hobbies.indexOf(hobbyLabel.textContent ?? ''),
+    );
+    const target = hobbies[(startIndex + 1) % hobbies.length];
+
+    const finish = () => {
+      hobbyLabel.textContent = target;
+      hobbyLabel.classList.remove('is-spinning');
+      shuffleButton.removeAttribute('disabled');
+      if (announcer) announcer.textContent = target;
+    };
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      finish();
+      return;
+    }
+
+    shuffleButton.setAttribute('disabled', '');
+    hobbyLabel.classList.add('is-spinning');
+    let tick = 0;
+
+    const interval = setInterval(() => {
+      tick += 1;
+      if (tick >= TICK_COUNT) {
+        clearInterval(interval);
+        finish();
+        return;
+      }
+      hobbyLabel.textContent = hobbies[(startIndex + tick) % hobbies.length];
+    }, TICK_MS);
+  });
+</script>
+
+<style>
+  .hero {
+    --region-space: var(--space-xl-2xl);
+  }
+
+  .hero__title {
+    font-size: var(--size-step-6);
+    letter-spacing: -0.02em;
+  }
+
+  .hero__lede {
+    font-size: var(--text-size-lede);
+    max-width: 44ch;
+  }
+
+  .status-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 1ch;
+    background-color: var(--color-accent-wash);
+    color: var(--color-accent);
+    border: 1px solid var(--color-pill-border);
+    border-radius: var(--rounded-sm);
+    font-size: var(--text-size-label);
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    padding: var(--space-2xs) var(--space-s);
+  }
+
+  .grid {
+    --grid-min-item-size: 18rem;
+  }
+
+  .card-link,
+  .interests__current a,
+  .log__title a {
+    color: var(--color-accent);
+  }
+
+  .interests__current a {
+    font-weight: 500;
+    text-decoration: none;
+  }
+
+  .interests__current a:hover {
+    text-decoration: underline;
+  }
+
+  .interests__current .is-spinning {
+    filter: blur(2px);
+  }
+
+  .shuffle {
+    font-family: var(--font-mono);
+    font-size: var(--text-size-label);
+    font-weight: 500;
+    background-color: var(--color-light-glare);
+    color: var(--color-gray-3);
+    border: 2px solid var(--color-border-key);
+    border-radius: var(--rounded-sm);
+    box-shadow: var(--shadow-key);
+    padding: var(--space-xs) var(--space-s);
+    cursor: pointer;
+  }
+
+  .shuffle:hover {
+    transform: translate(var(--key-hover-shift), var(--key-hover-shift));
+    box-shadow: var(--shadow-key-hover);
+  }
+
+  .shuffle[disabled] {
+    cursor: wait;
+  }
+
+  .photo-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-m);
+    border: 1px dashed var(--color-text-muted);
+    border-radius: var(--rounded-md);
+    padding: var(--space-l);
+    text-align: center;
+  }
+
+  .photo-card__hint {
+    font-size: var(--text-size-meta);
+    color: var(--color-text-muted);
+  }
+
+  .section-lede {
+    font-size: var(--text-size-meta);
+    color: var(--color-text-muted);
+  }
+
+  .log {
+    position: relative;
+    padding-inline-start: var(--space-l);
+  }
+
+  .log::before {
+    content: "";
+    position: absolute;
+    inset-block: 6px;
+    inset-inline-start: 4px;
+    inline-size: 2px;
+    background: linear-gradient(
+      to bottom,
+      var(--color-border) 85%,
+      var(--color-bg)
+    );
+  }
+
+  .log__item {
+    position: relative;
+  }
+
+  .log__item::before {
+    content: "";
+    position: absolute;
+    inset-inline-start: calc(-1 * var(--space-l) - 1px);
+    inset-block-start: 8px;
+    inline-size: 12px;
+    aspect-ratio: 1;
+    border-radius: var(--rounded-full);
+    background-color: var(--color-text-muted);
+    z-index: 1;
+  }
+
+  .log__item:first-child::before {
+    background-color: var(--color-accent);
+  }
+
+  .log__title {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-xs);
+    max-width: unset;
+  }
+
+  .log__dates {
+    font-family: var(--font-mono);
+    font-size: var(--text-size-meta);
+    font-weight: 400;
+    color: var(--color-text-muted);
+  }
+
+  .log__description {
+    font-size: var(--text-size-meta);
+    max-width: 60ch;
+  }
+
+  .ls-panel {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--rounded-md);
+    padding: var(--space-l);
+    font-size: var(--text-size-meta);
+  }
+</style>

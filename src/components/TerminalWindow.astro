@@ -1,0 +1,80 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<div class="terminal">
+  <div class="terminal__header">
+    <span class="dot dot--error" aria-hidden="true"></span>
+    <span class="dot dot--warning" aria-hidden="true"></span>
+    <span class="dot dot--success" aria-hidden="true"></span>
+    <span class="terminal__title">{title}</span>
+  </div>
+  <div class="terminal__body">
+    <slot />
+  </div>
+</div>
+
+<style>
+  .terminal {
+    background-color: var(--color-panel);
+    color: var(--color-on-panel);
+    border: 1px solid var(--color-border);
+    border-radius: var(--rounded-md);
+    overflow: hidden;
+    font-size: var(--text-size-meta);
+  }
+
+  .terminal__header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2xs);
+    padding: var(--space-xs) var(--space-m);
+    background-color: rgb(255 255 255 / 4%);
+  }
+
+  .terminal__title {
+    margin-inline-start: var(--space-2xs);
+    font-size: var(--text-size-label);
+    opacity: 0.6;
+  }
+
+  .dot {
+    inline-size: 10px;
+    aspect-ratio: 1;
+    border-radius: var(--rounded-full);
+  }
+
+  .dot--error {
+    background-color: var(--color-error);
+  }
+
+  .dot--warning {
+    background-color: var(--color-warning);
+  }
+
+  .dot--success {
+    background-color: var(--color-success);
+  }
+
+  .terminal__body {
+    display: grid;
+    gap: var(--space-2xs);
+    padding: var(--space-l);
+  }
+
+  .terminal__body :global(.prompt) {
+    color: var(--color-panel-accent);
+  }
+
+  .terminal__body :global(p) {
+    line-height: var(--leading);
+  }
+
+  .terminal__body :global(p + p:has(.prompt)) {
+    margin-block-start: var(--space-s);
+  }
+</style>

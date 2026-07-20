@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>scottmccracken.net — Design System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  /* colors — light */
+  --color-background: #F2EDE3;
+  --color-surface: #FBF8EF;
+  --color-surface-muted: #EDE8DC;
+  --color-ink: #16191F;
+  --color-ink-muted: #63676D;
+  --color-primary: #1E7B33;
+  --color-primary-hover: #186329;
+  --color-on-primary: #FBF8EF;
+  --color-primary-tint: #E2F0DA;
+  --color-terminal: #131720;
+  --color-on-terminal: #C9CDD5;
+  --color-terminal-green: #4EA85C;
+  --color-border-strong: #16191F;
+  --color-border-soft: #DDD7C9;
+  --color-success: #57A64E;
+  --color-warning: #E8B93E;
+  --color-error: #E5564D;
+  --color-pill-border: transparent;
+
+  /* typography */
+  --font-heading: "Space Grotesk", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+  --type-display-size: 64px;   --type-display-weight: 700; --type-display-leading: 1.05; --type-display-tracking: -0.02em;
+  --type-h2-size: 40px;        --type-h2-weight: 700;      --type-h2-leading: 1.1;       --type-h2-tracking: -0.01em;
+  --type-h3-size: 20px;        --type-h3-weight: 600;      --type-h3-leading: 1.3;
+  --type-body-size: 16px;      --type-body-weight: 400;    --type-body-leading: 1.7;
+  --type-meta-size: 14px;      --type-meta-weight: 400;    --type-meta-leading: 1.5;
+  --type-label-size: 13px;     --type-label-weight: 500;   --type-label-leading: 1;      --type-label-tracking: 0.01em;
+
+  /* rounded */
+  --rounded-none: 0px;
+  --rounded-sm: 6px;
+  --rounded-md: 10px;
+  --rounded-lg: 14px;
+  --rounded-full: 999px;
+
+  /* spacing */
+  --space-2xs: 4px;
+  --space-xs: 8px;
+  --space-s: 12px;
+  --space-m: 16px;
+  --space-l: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+  --space-3xl: 64px;
+  --space-4xl: 96px;
+  --space-5xl: 128px;
+
+  /* elevation — light: neo-brutalist key */
+  --shadow-key: 3px 3px 0 var(--color-border-strong);
+  --border-key: 2px solid var(--color-border-strong);
+  --color-nav: var(--color-ink);
+}
+
+/* dark mode — the page becomes the terminal */
+:root[data-theme="dark"] {
+  --color-background: #0C1117;
+  --color-surface: #161C24;
+  --color-surface-muted: #1D242E;
+  --color-ink: #E6E9ED;
+  --color-ink-muted: #97A0AB;
+  --color-primary: #4EBB5C;
+  --color-primary-hover: #186329;
+  --color-primary-button: #1F8636;
+  --color-on-primary: #FFFFFF;
+  --color-primary-tint: #15271B;
+  --color-terminal: #161C24;
+  --color-on-terminal: #C9CDD5;
+  --color-terminal-green: #4EBB5C;
+  --color-border-strong: #E6E9ED;
+  --color-border-soft: #242C36;
+  --color-pill-border: #4EBB5C;
+  /* flat controls: no key shadow on a screen */
+  --shadow-key: none;
+  --border-key: 2px solid transparent;
+  --color-nav: #4EBB5C;
+}
+:root { --color-primary-button: var(--color-primary); }
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--color-background);
+  color: var(--color-ink);
+  font-family: var(--font-mono);
+  font-size: var(--type-body-size);
+  line-height: var(--type-body-leading);
+  padding: var(--space-2xl) var(--space-l) var(--space-5xl);
+  transition: background .15s ease, color .15s ease;
+}
+
+.wrap { max-width: 1040px; margin: 0 auto; }
+
+/* ---- guide chrome ---- */
+.theme-toggle {
+  position: fixed; top: var(--space-l); right: var(--space-l);
+  font-family: var(--font-mono); font-size: var(--type-label-size); font-weight: var(--type-label-weight);
+  background: var(--color-surface); color: var(--color-ink);
+  border: 1px solid var(--color-border-soft); border-radius: var(--rounded-sm);
+  padding: 8px 14px; cursor: pointer;
+}
+.guide-header { margin-bottom: var(--space-4xl); }
+.guide-header h1 {
+  font-family: var(--font-heading);
+  font-size: var(--type-display-size);
+  font-weight: var(--type-display-weight);
+  line-height: var(--type-display-leading);
+  letter-spacing: var(--type-display-tracking);
+  margin: var(--space-s) 0;
+}
+.guide-header p { max-width: 62ch; }
+.guide-note { color: var(--color-ink-muted); font-size: var(--type-meta-size); margin-top: var(--space-s); }
+
+section.guide { margin-bottom: var(--space-4xl); }
+section.guide > h2 {
+  font-family: var(--font-heading);
+  font-size: var(--type-h2-size);
+  font-weight: var(--type-h2-weight);
+  line-height: var(--type-h2-leading);
+  letter-spacing: var(--type-h2-tracking);
+  margin-bottom: var(--space-xs);
+}
+.terminal-body .prompt { color: var(--color-terminal-green); }
+section.guide > h2 .prompt { font-family: var(--font-mono); color: var(--color-primary); }
+.section-lede { color: var(--color-ink-muted); font-size: var(--type-meta-size); margin-bottom: var(--space-l); max-width: 70ch; }
+.token { font-size: var(--type-label-size); color: var(--color-ink-muted); }
+
+/* ---- colors ---- */
+.swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: var(--space-m); }
+.swatch { border: 1px solid var(--color-border-soft); border-radius: var(--rounded-md); overflow: hidden; background: var(--color-surface); }
+.swatch .block { height: 88px; display: flex; align-items: flex-end; padding: var(--space-s); font-size: var(--type-meta-size); }
+.swatch .info { padding: var(--space-s) var(--space-m); font-size: var(--type-label-size); display: flex; justify-content: space-between; gap: var(--space-s); flex-wrap: wrap; }
+.swatch .info span { color: var(--color-ink-muted); }
+.swatch .ratio { width: 100%; color: var(--color-ink-muted); }
+.group-label { font-size: var(--type-meta-size); color: var(--color-ink-muted); margin: var(--space-l) 0 var(--space-s); }
+
+/* ---- typography ---- */
+.spec-row { display: grid; grid-template-columns: 220px 1fr; gap: var(--space-l); align-items: baseline; padding: var(--space-l) 0; border-bottom: 1px solid var(--color-border-soft); }
+.spec-row:last-child { border-bottom: none; }
+.spec-meta { font-size: var(--type-label-size); color: var(--color-ink-muted); line-height: 1.6; }
+.spec-meta b { color: var(--color-ink); }
+.t-display { font-family: var(--font-heading); font-size: var(--type-display-size); font-weight: var(--type-display-weight); line-height: var(--type-display-leading); letter-spacing: var(--type-display-tracking); }
+.t-h2 { font-family: var(--font-heading); font-size: var(--type-h2-size); font-weight: var(--type-h2-weight); line-height: var(--type-h2-leading); letter-spacing: var(--type-h2-tracking); }
+.t-h3 { font-family: var(--font-heading); font-size: var(--type-h3-size); font-weight: var(--type-h3-weight); line-height: var(--type-h3-leading); }
+.t-body { font-family: var(--font-mono); font-size: var(--type-body-size); font-weight: var(--type-body-weight); line-height: var(--type-body-leading); max-width: 60ch; }
+.t-meta { font-family: var(--font-mono); font-size: var(--type-meta-size); font-weight: var(--type-meta-weight); line-height: var(--type-meta-leading); }
+.t-label { font-family: var(--font-mono); font-size: var(--type-label-size); font-weight: var(--type-label-weight); line-height: var(--type-label-leading); letter-spacing: var(--type-label-tracking); }
+
+/* ---- spacing ---- */
+.space-row { display: flex; align-items: center; gap: var(--space-l); margin-bottom: var(--space-s); }
+.space-row .token { width: 120px; }
+.space-bar { background: var(--color-primary-tint); border: 1px solid var(--color-primary); height: 20px; border-radius: 2px; }
+
+/* ---- radius ---- */
+.radius-grid { display: flex; flex-wrap: wrap; gap: var(--space-l); }
+.radius-box { width: 130px; height: 90px; background: var(--color-surface); border: 2px solid var(--color-border-strong); display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 4px; font-size: var(--type-label-size); }
+
+/* ---- elevation ---- */
+.elev-grid { display: flex; flex-wrap: wrap; gap: var(--space-xl); }
+.elev-card { width: 240px; padding: var(--space-l); border-radius: var(--rounded-md); font-size: var(--type-meta-size); }
+.elev-flat { background: var(--color-surface); border: 1px solid var(--color-border-soft); }
+.elev-key { background: var(--color-surface); border: var(--border-key); border-radius: var(--rounded-sm); box-shadow: var(--shadow-key); }
+:root[data-theme="dark"] .elev-key { background: var(--color-surface-muted); }
+.elev-dark { background: var(--color-terminal); color: var(--color-on-terminal); border: 1px solid var(--color-border-soft); }
+.elev-card .token { display: block; margin-top: var(--space-xs); }
+.elev-dark .token { color: var(--color-on-terminal); opacity: .6; }
+
+/* ---- components ---- */
+.comp-block { margin-bottom: var(--space-2xl); }
+.comp-block h3 { font-family: var(--font-heading); font-size: var(--type-h3-size); font-weight: var(--type-h3-weight); line-height: var(--type-h3-leading); margin-bottom: var(--space-s); }
+.comp-row { display: flex; flex-wrap: wrap; gap: var(--space-l); align-items: flex-start; }
+.comp-item { display: flex; flex-direction: column; gap: var(--space-xs); align-items: flex-start; }
+
+.btn {
+  font-family: var(--font-mono); font-size: var(--type-label-size); font-weight: var(--type-label-weight);
+  letter-spacing: var(--type-label-tracking);
+  height: 44px; padding: 0 20px; display: inline-flex; align-items: center; gap: 8px;
+  border: var(--border-key); border-radius: var(--rounded-sm);
+  box-shadow: var(--shadow-key); cursor: pointer;
+  transition: transform .08s ease, box-shadow .08s ease, background .08s ease;
+}
+.btn-primary { background: var(--color-primary-button); color: var(--color-on-primary); }
+.btn-primary:hover, .btn-primary.is-hover { background: var(--color-primary-hover); }
+:root:not([data-theme="dark"]) .btn-primary:hover, :root:not([data-theme="dark"]) .btn-primary.is-hover { transform: translate(1px, 1px); box-shadow: 2px 2px 0 var(--color-border-strong); }
+:root:not([data-theme="dark"]) .btn:active, :root:not([data-theme="dark"]) .btn.is-active { transform: translate(3px, 3px); box-shadow: 0 0 0 var(--color-border-strong); }
+/* button-secondary stays cream in both modes */
+.btn-secondary { background: #FBF8EF; color: #16191F; }
+:root[data-theme="dark"] .btn-secondary { border-color: #FBF8EF; }
+:root:not([data-theme="dark"]) .btn-secondary:hover { transform: translate(1px, 1px); box-shadow: 2px 2px 0 var(--color-border-strong); }
+.btn:disabled { opacity: .45; box-shadow: none; transform: none; cursor: not-allowed; }
+.btn:focus-visible { outline: 2px dashed var(--color-primary); outline-offset: 3px; }
+
+.pill, .chip {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: var(--font-mono); border-radius: var(--rounded-sm);
+}
+.pill { background: var(--color-primary-tint); color: var(--color-primary); font-size: var(--type-label-size); font-weight: var(--type-label-weight); letter-spacing: var(--type-label-tracking); padding: 6px 12px; border: 1px solid var(--color-pill-border); }
+.chip { font-size: var(--type-meta-size); padding: 6px 14px; }
+.chip-green { background: var(--color-primary-tint); color: var(--color-ink); }
+.chip-neutral { background: var(--color-surface-muted); color: var(--color-ink-muted); }
+.chip-draft { background: transparent; color: var(--color-ink-muted); border: 1px dashed var(--color-ink-muted); }
+
+.card { background: var(--color-surface); border: 1px solid var(--color-border-soft); border-radius: var(--rounded-md); overflow: hidden; max-width: 340px; }
+.card-header { background: var(--color-surface-muted); border-bottom: 1px solid var(--color-border-soft); padding: 10px 16px; font-size: var(--type-meta-size); color: var(--color-ink-muted); }
+.card-body { padding: var(--space-l); font-size: var(--type-meta-size); }
+.card-body a { color: var(--color-primary); }
+
+.terminal { background: var(--color-terminal); color: var(--color-on-terminal); border: 1px solid var(--color-border-soft); border-radius: var(--rounded-md); overflow: hidden; max-width: 400px; font-size: var(--type-meta-size); }
+.terminal-header { display: flex; align-items: center; gap: 8px; padding: 10px 16px; background: rgba(255,255,255,.04); }
+.dot { width: 10px; height: 10px; border-radius: var(--rounded-full); }
+.dot-r { background: var(--color-error); } .dot-y { background: var(--color-warning); } .dot-g { background: var(--color-success); }
+.terminal-title { margin-left: 4px; opacity: .6; font-size: var(--type-label-size); }
+.terminal-body { padding: var(--space-l); display: grid; gap: 6px; }
+
+.navdemo { display: flex; gap: var(--space-l); font-size: var(--type-meta-size); }
+.navdemo a { color: var(--color-nav); text-decoration: none; padding: 8px 4px; }
+.navdemo a:hover, .navdemo a.is-hover { text-decoration: underline; }
+
+.timeline-demo { border-left: 2px solid var(--color-border-soft); padding-left: var(--space-l); max-width: 60ch; position: relative; }
+.timeline-demo::before { content: ""; position: absolute; left: -6px; top: 6px; width: 10px; height: 10px; border-radius: var(--rounded-full); background: var(--color-primary); }
+.timeline-demo .t-h3 a { color: var(--color-primary); }
+.timeline-demo .dates { color: var(--color-ink-muted); font-size: var(--type-meta-size); }
+
+/* ---- do's and don'ts ---- */
+.dd-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-l); }
+@media (max-width: 720px) { .dd-grid { grid-template-columns: 1fr; } .spec-row { grid-template-columns: 1fr; } }
+.dd-col { background: var(--color-surface); border: 1px solid var(--color-border-soft); border-radius: var(--rounded-md); padding: var(--space-l); }
+.dd-col h3 { font-family: var(--font-heading); font-size: var(--type-h3-size); font-weight: 700; margin-bottom: var(--space-m); }
+.dd-col ul { list-style: none; display: grid; gap: var(--space-s); font-size: var(--type-meta-size); }
+.dd-col li { padding-left: 24px; position: relative; }
+.dd-do li::before { content: "✓"; position: absolute; left: 0; color: var(--color-success); font-weight: 700; }
+.dd-dont li::before { content: "✗"; position: absolute; left: 0; color: var(--color-error); font-weight: 700; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <button type="button" class="theme-toggle" onclick="const r=document.documentElement; r.dataset.theme = r.dataset.theme==='dark' ? '' : 'dark'; this.textContent = r.dataset.theme==='dark' ? '[ light ]' : '[ dark ]'">[ dark ]</button>
+
+  <header class="guide-header">
+    <span class="pill">$ cat docs/design.html</span>
+    <h1>scottmccracken.net</h1>
+    <p>Terminal-inspired personal-site design system — warm cream paper in light mode, a true terminal in dark mode, deep green interactive accents, and a monospace UI voice.</p>
+    <p class="guide-note">This file is the human-readable mirror of <code>docs/design.md</code> (the source of truth). Every value on this page is rendered from the same tokens. Use the [ dark ] toggle to preview both modes.</p>
+  </header>
+
+  <section class="guide">
+    <h2><span class="prompt">$</span> Colors</h2>
+    <p class="section-lede">Two full modes, one accent hue. Light is warm paper; dark drops the paper conceit and becomes the terminal. Every text pair below is verified ≥ 4.5:1 (WCAG AA) in both modes — swatches re-render in the current theme via the toggle. Ratios shown are for the mode they belong to.</p>
+    <div class="swatches">
+      <div class="swatch"><div class="block" style="background:var(--color-background); color:var(--color-ink)">ink on background</div><div class="info"><b>background</b><span>#F2EDE3 · dark #0C1117</span><span class="ratio">15.1:1 light · 15.6:1 dark</span></div></div>
+      <div class="swatch"><div class="block" style="background:var(--color-surface); color:var(--color-ink)">ink on surface</div><div class="info"><b>surface</b><span>#FBF8EF · dark #161C24</span><span class="ratio">16.6:1 light · 14.1:1 dark</span></div></div>
+      <div class="swatch"><div class="block" style="background:var(--color-surface-muted); color:var(--color-ink-muted)">ink-muted on surface-muted</div><div class="info"><b>surface-muted</b><span>#EDE8DC · dark #1D242E</span><span class="ratio">4.7:1 light · 5.9:1 dark</span></div></div>
+      <div class="swatch"><div class="block" style="background:var(--color-ink); color:var(--color-background)">background on ink</div><div class="info"><b>ink</b><span>#16191F · dark #E6E9ED</span></div></div>
+      <div class="swatch"><div class="block" style="background:var(--color-surface); color:var(--color-ink-muted)">ink-muted on surface</div><div class="info"><b>ink-muted</b><span>#63676D · dark #97A0AB</span><span class="ratio">5.4:1 light · 6.5:1 dark</span></div></div>
+      <div class="swatch"><div class="block" style="background:var(--color-primary-button); color:var(--color-on-primary)">on-primary on button green</div><div class="info"><b>primary / primary-button</b><span>#1E7B33 · dark #1F8636</span><span class="ratio">5.0:1 light · 4.6:1 dark</span></div></div>
+      <div class="swatch"><div class="block" style="background:var(--color-primary-tint); color:var(--color-primary)">primary on primary-tint</div><div class="info"><b>primary-tint</b><span>#E2F0DA · dark #15271B</span><span class="ratio">4.5:1 light · 6.4:1 dark</span></div></div>
+      <div class="swatch"><div class="block" style="background:var(--color-background); color:var(--color-primary)">primary link on background</div><div class="info"><b>primary (text/link)</b><span>#1E7B33 · dark #4EBB5C</span><span class="ratio">4.6:1 light · 7.8:1 dark</span></div></div>
+      <div class="swatch"><div class="block" style="background:var(--color-terminal); color:var(--color-terminal-green)">$ terminal-green</div><div class="info"><b>terminal / terminal-green</b><span>#131720 / #4EA85C</span><span class="ratio">6.1:1 light-mode island</span></div></div>
+      <div class="swatch"><div class="block" style="background:var(--color-border-soft); color:var(--color-ink)">card hairlines</div><div class="info"><b>border-soft</b><span>#DDD7C9 · dark #242C36</span></div></div>
+    </div>
+    <p class="group-label">Semantic / traffic-light set (shared across modes)</p>
+    <div class="swatches">
+      <div class="swatch"><div class="block" style="background:var(--color-success); color:#FFFFFF">success</div><div class="info"><b>success</b><span>#57A64E</span></div></div>
+      <div class="swatch"><div class="block" style="background:var(--color-warning); color:#16191F">warning</div><div class="info"><b>warning</b><span>#E8B93E</span></div></div>
+      <div class="swatch"><div class="block" style="background:var(--color-error); color:#FFFFFF">error</div><div class="info"><b>error</b><span>#E5564D</span></div></div>
+    </div>
+  </section>
+
+  <section class="guide">
+    <h2><span class="prompt">$</span> Typography</h2>
+    <p class="section-lede">Two voices, strictly cast: Space Grotesk (500–700) for headings, IBM Plex Mono for everything else — the monospace body <em>is</em> the brand.</p>
+    <div class="spec-row"><div class="spec-meta"><b>display</b><br>Space Grotesk · 64px · 700<br>1.05 / -0.02em</div><div class="t-display">Scott McCracken</div></div>
+    <div class="spec-row"><div class="spec-meta"><b>heading-2</b><br>Space Grotesk · 40px · 700<br>1.1 / -0.01em</div><div class="t-h2">$ git log --author=scott</div></div>
+    <div class="spec-row"><div class="spec-meta"><b>heading-3</b><br>Space Grotesk · 20px · 600 · 1.3</div><div class="t-h3">Software Engineer @ Accessible Web</div></div>
+    <div class="spec-row"><div class="spec-meta"><b>body-mono</b><br>IBM Plex Mono · 16px · 400 · 1.7</div><div class="t-body">Front-end developer from Vermont. Twenty-three years of making interfaces behave, mostly from behind the scenes.</div></div>
+    <div class="spec-row"><div class="spec-meta"><b>meta-mono</b><br>IBM Plex Mono · 14px · 400 · 1.5</div><div class="t-meta">Jul 2021 — Present · ~/about.md</div></div>
+    <div class="spec-row"><div class="spec-meta"><b>label-mono</b><br>IBM Plex Mono · 13px · 500<br>1 / 0.01em</div><div class="t-label">$ status --available-for-interesting-things</div></div>
+  </section>
+
+  <section class="guide">
+    <h2><span class="prompt">$</span> Spacing</h2>
+    <p class="section-lede">A plain 4px-based ladder. Sections separate at 4xl–5xl; card grids gap at l; when in doubt, pick the larger step.</p>
+    <div class="space-row"><span class="token">2xs · 4px</span><div class="space-bar" style="width:var(--space-2xs)"></div></div>
+    <div class="space-row"><span class="token">xs · 8px</span><div class="space-bar" style="width:var(--space-xs)"></div></div>
+    <div class="space-row"><span class="token">s · 12px</span><div class="space-bar" style="width:var(--space-s)"></div></div>
+    <div class="space-row"><span class="token">m · 16px</span><div class="space-bar" style="width:var(--space-m)"></div></div>
+    <div class="space-row"><span class="token">l · 24px</span><div class="space-bar" style="width:var(--space-l)"></div></div>
+    <div class="space-row"><span class="token">xl · 32px</span><div class="space-bar" style="width:var(--space-xl)"></div></div>
+    <div class="space-row"><span class="token">2xl · 48px</span><div class="space-bar" style="width:var(--space-2xl)"></div></div>
+    <div class="space-row"><span class="token">3xl · 64px</span><div class="space-bar" style="width:var(--space-3xl)"></div></div>
+    <div class="space-row"><span class="token">4xl · 96px</span><div class="space-bar" style="width:var(--space-4xl)"></div></div>
+    <div class="space-row"><span class="token">5xl · 128px</span><div class="space-bar" style="width:var(--space-5xl)"></div></div>
+  </section>
+
+  <section class="guide">
+    <h2><span class="prompt">$</span> Radius</h2>
+    <p class="section-lede">Slightly rounded, never blobby: sm for buttons and chips, md for cards and panels, full only for dots and markers.</p>
+    <div class="radius-grid">
+      <div class="radius-box" style="border-radius:var(--rounded-none)"><b>none</b><span class="token">0px</span></div>
+      <div class="radius-box" style="border-radius:var(--rounded-sm)"><b>sm</b><span class="token">6px</span></div>
+      <div class="radius-box" style="border-radius:var(--rounded-md)"><b>md</b><span class="token">10px</span></div>
+      <div class="radius-box" style="border-radius:var(--rounded-lg)"><b>lg</b><span class="token">14px</span></div>
+      <div class="radius-box" style="border-radius:var(--rounded-full); width:90px"><b>full</b><span class="token">999px</span></div>
+    </div>
+  </section>
+
+  <section class="guide">
+    <h2><span class="prompt">$</span> Elevation &amp; Depth</h2>
+    <p class="section-lede">Never blurred. Light mode: ink borders + hard 3px key shadows on pressables, flat hairline cards. Dark mode: shadows and ink outlines disappear — depth comes from surface contrast and hairlines. Toggle the theme to watch the key shadow vanish.</p>
+    <div class="elev-grid">
+      <div class="elev-card elev-flat">Flat card<span class="token">1px border-soft, no shadow</span></div>
+      <div class="elev-card elev-key">Pressable key<span class="token">light: 2px border-strong + 3px 3px 0 · dark: flat fill</span></div>
+      <div class="elev-card elev-dark">Terminal island<span class="token">light: dark fill on paper · dark: merges with page</span></div>
+    </div>
+  </section>
+
+  <section class="guide">
+    <h2><span class="prompt">$</span> Components</h2>
+
+    <div class="comp-block">
+      <h3>Buttons</h3>
+      <div class="comp-row">
+        <div class="comp-item"><button type="button" class="btn btn-primary">View GitHub ↗</button><span class="token">button-primary</span></div>
+        <div class="comp-item"><button type="button" class="btn btn-primary is-hover">View GitHub ↗</button><span class="token">button-primary-hover (shown)</span></div>
+        <div class="comp-item"><button type="button" class="btn btn-primary is-active">View GitHub ↗</button><span class="token">active / pressed (shown)</span></div>
+        <div class="comp-item"><button type="button" class="btn btn-secondary">Say hi 👋</button><span class="token">button-secondary — cream in both modes</span></div>
+        <div class="comp-item"><button type="button" class="btn btn-primary" disabled>View GitHub ↗</button><span class="token">disabled</span></div>
+      </div>
+    </div>
+
+    <div class="comp-block">
+      <h3>Status pill &amp; chips</h3>
+      <div class="comp-row">
+        <div class="comp-item"><span class="pill">$ status --available-for-interesting-things</span><span class="token">status-pill — gains green outline in dark</span></div>
+        <div class="comp-item"><span class="chip chip-green">gardening/</span><span class="token">chip</span></div>
+        <div class="comp-item"><span class="chip chip-neutral">woodworking.todo</span><span class="token">chip-neutral</span></div>
+        <div class="comp-item"><span class="chip chip-draft">skiing.draft.txt|</span><span class="token">draft variant (dashed)</span></div>
+      </div>
+    </div>
+
+    <div class="comp-block">
+      <h3>Card with header</h3>
+      <div class="comp-row">
+        <div class="comp-item">
+          <div class="card">
+            <div class="card-header">~/about.md</div>
+            <div class="card-body">Twenty-three years turning good intentions into usable interfaces — happiest in the front of the front-end.<br><br><a href="#">cat --full →</a></div>
+          </div>
+          <span class="token">card + card-header — never ship one without the title-bar</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp-block">
+      <h3>Terminal panel</h3>
+      <div class="comp-row">
+        <div class="comp-item">
+          <div class="terminal">
+            <div class="terminal-header"><span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span><span class="terminal-title">whoami.sh</span></div>
+            <div class="terminal-body">
+              <div><span class="prompt">$</span> whoami</div>
+              <div>front-end developer, Vermont</div>
+              <div><span class="prompt">$</span> uptime</div>
+              <div>23 years, still delighted by a good :hover</div>
+            </div>
+          </div>
+          <span class="token">terminal-panel — inverted island in light, ordinary card in dark</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp-block">
+      <h3>Navigation links</h3>
+      <div class="comp-row">
+        <div class="comp-item">
+          <nav class="navdemo"><a href="#">./home</a><a href="#" class="is-hover">./about</a><a href="#">./log</a><a href="#">./contact</a></nav>
+          <span class="token">nav-link — ink in light, primary green in dark; underline on hover only (second link shown hovered)</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp-block">
+      <h3>Timeline entry (composed)</h3>
+      <div class="timeline-demo">
+        <span class="chip chip-neutral" style="font-size:var(--type-label-size)">aweb2021</span>
+        <p class="t-h3" style="margin:8px 0 2px">Software Engineer @ <a href="#">Accessible Web</a></p>
+        <p class="dates">Jul 2021 — Present</p>
+        <p class="t-meta" style="margin-top:8px">Building tools that help teams catch and fix accessibility issues before they ship.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="guide">
+    <h2><span class="prompt">$</span> Do's and Don'ts</h2>
+    <div class="dd-grid">
+      <div class="dd-col dd-do">
+        <h3>✓ Do</h3>
+        <ul>
+          <li>Keep all UI copy in the terminal voice — <code>$</code> prompts, file paths, flags — and keep it consistent.</li>
+          <li>Use the green strictly for interactive or "live" things: buttons, links, prompts, current status.</li>
+          <li>Light mode: ink border + hard offset shadow with hover-translate on every pressable. Dark mode: flat controls, background shifts instead.</li>
+          <li>Verify every new text/background pair at ≥ 4.5:1 in both modes before shipping (3:1 is the floor for large text and UI graphics only).</li>
+          <li>Reserve terminal dark islands for at most two per page in light mode.</li>
+          <li>Let monospace body text breathe: 1.7 line-height, ~60ch max measure.</li>
+        </ul>
+      </div>
+      <div class="dd-col dd-dont">
+        <h3>✗ Don't</h3>
+        <ul>
+          <li>No gradients, blurred shadows, or glassmorphism — depth is borders, hard offsets (light), surface contrast (dark).</li>
+          <li>Never use pure #FFFFFF or #000000 as a surface; the only pure white is dark-mode button text, which needs it for contrast.</li>
+          <li>Don't add a second accent hue; traffic-light colors stay decorative or semantic.</li>
+          <li>Don't set body copy in Space Grotesk, or headings in mono at large sizes.</li>
+          <li>Don't let dark mode go neon — the greens stay garden, not phosphor.</li>
+          <li>Don't ship a card without its header, or a light-mode button without its shadow — half-applied treatments break the illusion.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</div>
+</body>
+</html>

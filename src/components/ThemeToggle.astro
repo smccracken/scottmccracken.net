@@ -32,8 +32,8 @@
 
   .theme-toggle {
     --size: var(--size-step-2);
-    --icon-fill: var(--color-dark);
-    --icon-fill-hover: hsl(210 10% 15%);
+    --icon-fill: var(--color-text);
+    --icon-fill-hover: var(--color-text-muted);
 
     background: none;
     border: none;
@@ -53,10 +53,6 @@
       stroke-linecap: round;
     }
 
-    :global([data-theme="dark"]) & {
-      --icon-fill: var(--color-light);
-      --icon-fill-hover: hsl(210 15% 90%);
-    }
   }
 
   .sun-and-moon {

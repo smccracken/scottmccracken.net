@@ -1,0 +1,35 @@
+---
+interface Props {
+  variant?: 'green' | 'neutral' | 'draft';
+}
+
+const { variant = 'green' } = Astro.props;
+---
+
+<span class:list={['chip', variant]}><slot /></span>
+
+<style>
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5ch;
+    font-size: var(--text-size-meta);
+    line-height: var(--leading);
+    padding: var(--space-2xs) var(--space-s);
+    border-radius: var(--rounded-sm);
+  }
+
+  .green {
+    background-color: var(--color-accent-wash);
+  }
+
+  .neutral {
+    background-color: var(--color-surface-muted);
+    color: var(--color-text-muted);
+  }
+
+  .draft {
+    border: 1px dashed var(--color-text-muted);
+    color: var(--color-text-muted);
+  }
+</style>

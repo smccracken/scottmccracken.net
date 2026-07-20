@@ -7,38 +7,110 @@ const topLevelPath = currentPath.split('/')[1];
 
 const navItems = [
   {
-    label: 'Home',
+    label: 'home',
     url: '/',
   },
   {
-    label: 'About',
+    label: 'about',
     url: '/about',
+  },
+  {
+    label: 'log',
+    url: '/log',
+  },
+  {
+    label: 'contact',
+    url: '/contact',
   },
 ];
 ---
 
-<header class="region">
+<header class="site-header">
   <Container>
   <div class="cluster">
-    <nav aria-label="Main Navigation">
-      <ul class="cluster">
-        {navItems.map((item) => (
-          <li>
-            <a href={item.url} aria-current={topLevelPath === item.url.split("/")[1] ? "page" : undefined}>{item.label}</a>
-          </li>
-        ))}
-      </ul>
-    </nav>
-    <ThemeToggle />
+    <a class="brand" href="/">
+      <span class="brand__mark" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 3 2 12h3v8h6v-6h2v6h6v-8h3z"></path>
+        </svg>
+      </span>
+      <span class="brand__text" aria-hidden="true">scott@vermont ~ %</span>
+      <span class="visually-hidden">Scott McCracken &#8212; home</span>
+    </a>
+    <div class="cluster" data-part="nav-group">
+      <nav aria-label="Main Navigation">
+        <ul class="cluster">
+          {navItems.map((item) => (
+            <li>
+              <a href={item.url} aria-current={topLevelPath === item.url.split("/")[1] ? "page" : undefined}>
+                <span aria-hidden>./</span>{item.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+      <ThemeToggle />
+    </div>
   </div>
   </Container>
 </header>
 
 <style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    padding-block: var(--space-s-m);
+    background-color: color-mix(in srgb, var(--color-bg) 88%, transparent);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--color-border);
+  }
+
   .cluster { --cluster-horizontal-alignment: space-between; }
+
+  [data-part="nav-group"] {
+    --cluster-horizontal-alignment: flex-end;
+    --space: var(--space-m-l);
+  }
+
   nav .cluster { --cluster-horizontal-alignment: flex-end; }
 
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    text-decoration: none;
+  }
+
+  .brand__mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    inline-size: var(--size-step-2);
+    aspect-ratio: 1;
+    background-color: var(--color-accent-fill);
+    color: var(--color-on-accent);
+    border-radius: var(--rounded-sm);
+  }
+
+  .brand__text {
+    font-size: var(--text-size-meta);
+    color: var(--color-text-muted);
+  }
+
+  nav a {
+    font-size: var(--text-size-meta);
+    color: var(--color-nav);
+    text-decoration: none;
+  }
+
+  nav a:hover {
+    text-decoration: underline;
+  }
+
   [aria-current="page"] {
-    font-weight: 700;
+    font-weight: 500;
+    text-decoration: underline;
   }
 </style>

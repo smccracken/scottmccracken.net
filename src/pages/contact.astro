@@ -1,0 +1,23 @@
+---
+import Container from '@/components/Container.astro';
+import TitleBlock from '@/components/TitleBlock.astro';
+import PageLayout from '@/layouts/PageLayout.astro';
+---
+
+<PageLayout title="Contact" description="Get in touch with Scott McCracken.">
+  <Container class="flow">
+    <TitleBlock>
+      <h1><span class="eyebrow">Contact</span> Say hi</h1>
+    </TitleBlock>
+    <section class="flow">
+      <p>
+        <span class="prompt">$</span> cat contact.txt
+      </p>
+      <p>
+        The fastest way to reach me is on
+        <a href="https://github.com/smccracken" rel="me">GitHub</a> or
+        <a href="https://www.linkedin.com/in/scottmccracken/" rel="me">LinkedIn</a>.
+      </p>
+    </section>
+  </Container>
+</PageLayout>

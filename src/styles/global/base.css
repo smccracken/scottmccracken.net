@@ -1,42 +1,41 @@
 body {
   color-scheme: light;
-  font-family: var(--font-sans);
+  font-family: var(--font-mono);
   font-size: var(--text-size-base);
   font-weight: 400;
-  background-color: var(--color-light);
+  line-height: var(--leading-loose);
+  background-color: var(--color-bg);
   will-change: transform;
-  color: var(--color-dark);
+  color: var(--color-text);
 }
 
 [data-theme="dark"] body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color-scheme: dark;
-  background-color: var(--color-dark);
-  color: var(--color-light);
 }
 
 :is(h1, h2, h3, h4) {
+  font-family: var(--font-heading);
   line-height: var(--leading-fine);
   text-wrap: balance;
 }
 
 h1 {
   font-size: var(--size-step-5);
+  font-weight: 700;
   max-width: 25ch;
 }
 
 h2 {
   font-size: var(--size-step-4);
+  font-weight: 700;
   max-width: 35ch;
 }
 
 :is(h3, h4, h5, h6) {
-  font-size: var(--size-step-3);
-}
-
-section {
-  max-width: 60ch;
+  font-size: var(--size-step-1);
+  font-weight: 600;
 }
 
 picture {
@@ -44,7 +43,12 @@ picture {
 }
 
 strong {
-  font-weight: 700;
+  font-weight: 500;
+}
+
+mark {
+  background-color: var(--color-accent-wash);
+  color: var(--color-text);
 }
 
 p {
