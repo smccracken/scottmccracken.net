@@ -1,0 +1,40 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<article class="file-card">
+  <header class="file-card__header">{title}</header>
+  <div class="file-card__body flow">
+    <slot />
+  </div>
+</article>
+
+<style>
+  .file-card {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--rounded-md);
+    overflow: hidden;
+    height: 100%;
+  }
+
+  .file-card__header {
+    background-color: var(--color-surface-muted);
+    border-bottom: 1px solid var(--color-border);
+    padding: var(--space-xs) var(--space-m);
+    font-size: var(--text-size-meta);
+    color: var(--color-text-muted);
+  }
+
+  .file-card__body {
+    padding: var(--space-l);
+    font-size: var(--text-size-meta);
+    flex-grow: 1;
+  }
+</style>

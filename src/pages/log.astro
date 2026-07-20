@@ -1,0 +1,19 @@
+---
+import Container from '@/components/Container.astro';
+import TitleBlock from '@/components/TitleBlock.astro';
+import PageLayout from '@/layouts/PageLayout.astro';
+---
+
+<PageLayout title="Log" description="Notes and long-form writing from Scott McCracken.">
+  <Container class="flow">
+    <TitleBlock>
+      <h1><span class="eyebrow">Log</span> Notes &amp; writing</h1>
+    </TitleBlock>
+    <section class="flow">
+      <p>
+        <span class="prompt">$</span> tail -f thoughts.log
+      </p>
+      <p>Nothing here yet &#8212; long-form notes are on the way.</p>
+    </section>
+  </Container>
+</PageLayout>
